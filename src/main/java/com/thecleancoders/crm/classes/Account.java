@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Account {
     private static int index = 0;
-    private final int accountId;
+    private int accountId;
     private String companyName;
     private Industry industry;
     private int employeeCount;
@@ -20,14 +20,14 @@ public class Account {
 
     public Account(Lead lead, Contact contact, Opportunity opportunity, Industry industry, int employeeCount, String city, String country) {
         index++;
-        this.accountId = index;
+        setAccountId(index);
         // The CRM takes the Company name from Lead Object
-        this.companyName = lead.getCompanyName();
+        setCompanyName(lead.getCompanyName());
         // The CRM prompts user for the industry, number of employees, city, and country of Mike’s company.
-        this.industry = industry;
-        this.employeeCount = employeeCount;
-        this.city = city;
-        this.country = country;
+        setIndustry(industry);
+        setEmployeeCount(employeeCount);
+        setCity(city);
+        setCountry(country);
         // The CRM adds the Contact to the contactList of the Account and the new Opportunity to the opportunityList of the Account.
         this.contactList.add(contact);
         this.opportunityList.add(opportunity);
@@ -37,6 +37,8 @@ public class Account {
     public int getAccountId() {
         return accountId;
     }
+
+    public void setAccountId(int accountId) { this.accountId = accountId; }
 
     public String getCompanyName() {
         return companyName;
