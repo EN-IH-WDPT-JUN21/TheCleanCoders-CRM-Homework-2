@@ -4,9 +4,11 @@ import com.thecleancoders.crm.enums.Product;
 import com.thecleancoders.crm.enums.Status;
 
 public class Opportunity {
+
     //Properties
 
-    private String id;
+    private int index = 1;
+    private int id;
     private Product product;
     private int quantity;
     private Contact decisionMaker;
@@ -14,18 +16,18 @@ public class Opportunity {
 
     //Constructor
 
-    public Opportunity(String id, Product product, int quantity, Contact decisionMaker, Status status) {
-        setId(id);
+    public Opportunity(int id, Product product, int quantity, Contact decisionMaker) {
+        index++;
+        setId(index);
         setProduct(product);
         setQuantity(quantity);
         setDecisionMaker(decisionMaker);
-        setStatus(status);
+        setStatus(Status.OPEN);
     }
-
 
     // Setters
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -45,10 +47,9 @@ public class Opportunity {
         this.status = status;
     }
 
-
     //Getters
 
-    public String getId() {
+    public int getId() {
         return this.id;
     }
 
