@@ -29,8 +29,8 @@ public class Account {
         setCity(city);
         setCountry(country);
         // The CRM adds the Contact to the contactList of the Account and the new Opportunity to the opportunityList of the Account.
-        this.contactList.add(contact);
-        this.opportunityList.add(opportunity);
+        addContactToList(contact);
+        addOpportunityToList(opportunity);
     }
 
     // getters and setters
@@ -84,16 +84,16 @@ public class Account {
         return contactList;
     }
 
-    public void setContactList(List<Contact> contactList) {
-        this.contactList = contactList;
-    }
-
     public List<Opportunity> getOpportunityList() {
         return opportunityList;
     }
 
-    public void setOpportunityList(List<Opportunity> opportunityList) {
-        this.opportunityList = opportunityList;
+    public void addContactToList(Contact contact) {
+        contactList.add(contact);
+    }
+
+    public void addOpportunityToList(Opportunity opportunity) {
+        opportunityList.add(opportunity);
     }
 
     @Override
