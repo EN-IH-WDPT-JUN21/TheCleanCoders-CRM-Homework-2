@@ -74,9 +74,17 @@ public class Lead {
     }
 
     public static void showLeads(){}
+
     public static void lookUpLeadId(int leadId){}
-    public static void convertToOpportunity(){}
-    public static void remove(){}
+
+    public static void convertToOpportunity(Product product, int quantity){
+        Contact contact = new Contact(this);
+        Oportunity oportunity = new oportunity(product, quantity, contact);
+        allLeads.remove(this);
+    }
+    public static void remove(){
+        allLeads.remove(this);
+    }
 
 
     @Override
