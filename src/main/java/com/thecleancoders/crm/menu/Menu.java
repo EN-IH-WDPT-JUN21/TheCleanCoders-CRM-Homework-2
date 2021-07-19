@@ -83,7 +83,7 @@ public class Menu {
         System.out.println("Shows all " + objectType.getPluralForm() + ".");
         switch (objectType) {
             case ACCOUNT:
-                printer.printAllAccounts()
+                printer.printAllAccounts();
                 break;
             case CONTACT:
                 printer.printAllContacts();
