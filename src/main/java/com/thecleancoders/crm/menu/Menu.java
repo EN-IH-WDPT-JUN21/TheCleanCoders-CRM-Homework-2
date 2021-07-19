@@ -1,5 +1,9 @@
 package com.thecleancoders.crm.menu;
 
+import com.thecleancoders.crm.classes.Account;
+import com.thecleancoders.crm.classes.Contact;
+import com.thecleancoders.crm.classes.Lead;
+import com.thecleancoders.crm.classes.Opportunity;
 import com.thecleancoders.crm.enums.Command;
 import com.thecleancoders.crm.enums.ObjectType;
 import com.thecleancoders.crm.enums.Status;
@@ -77,17 +81,50 @@ public class Menu {
 
     public void show(ObjectType objectType) {
         System.out.println("Shows all " + objectType.getPluralForm() + ".");
+        switch (objectType) {
+            case ACCOUNT:
+                printer.printAllAccounts()
+                break;
+            case CONTACT:
+                printer.printAllContacts();
+                break;
+            case LEAD:
+                printer.printAllLeads();
+                break;
+            case OPPORTUNITY:
+                printer.printAllOpportunities();
+                break;
+        }
     }
 
     public void lookup(ObjectType objectType, int id) {
         System.out.println("Lookups " + objectType + " with and id of " + id + ".");
+        switch (objectType) {
+            case ACCOUNT:
+//                printer.print(Account.getById(id).toString());
+                break;
+            case CONTACT:
+//                printer.print(Contact.getById(id).toString());
+                break;
+            case LEAD:
+//                printer.print(Lead.getById(id).toString());
+                break;
+            case OPPORTUNITY:
+//                printer.print(Opportunity.getById(id).toString());
+                break;
+        }
     }
 
     public void convert(int id) {
         System.out.println("Converts LEAD with an id of " + id + " to OPPORTUNITY and lots of other stuff happens too.");
+//        Lead lead = Lead.getById(id);
+//        lead.convertToOpportunity();
     }
 
     public void changeStatus(Status status, int id) {
-        System.out.println("Changes OPPORTUNITITY with and id of " + id + " status to " + status + ".");
+        System.out.println("Changes OPPORTUNITY with and id of " + id + " status to " + status + ".");
+//        Opportunity opportunity = Opportunity.getByID();
+//        opportunity.changeStatus(status);
+
     }
 }
