@@ -1,6 +1,6 @@
 package com.thecleancoders.crm.enums;
 
-public enum ObjectTypes {
+public enum ObjectType {
     ACCOUNT("ACCOUNT", "ACCOUNTS"),
     CONTACT("CONTACT", "CONTACTS"),
     LEAD("LEAD", "LEADS"),
@@ -9,7 +9,7 @@ public enum ObjectTypes {
     private String singularForm;
     private String pluralForm;
 
-    ObjectTypes(String singularForm, String pluralForm) {
+    ObjectType(String singularForm, String pluralForm) {
         this.singularForm = singularForm;
         this.pluralForm = pluralForm;
     }

@@ -1,7 +1,7 @@
 package com.thecleancoders.crm.menu;
 
 import com.thecleancoders.crm.enums.Command;
-import com.thecleancoders.crm.enums.ObjectTypes;
+import com.thecleancoders.crm.enums.ObjectType;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -12,7 +12,7 @@ class InputTest {
 
     @BeforeAll
     static void setUp() {
-        input = new Input();
+        input = new Input(new Printer());
     }
 
     @Test
@@ -24,15 +24,15 @@ class InputTest {
 
     @Test
     void getObjectTypeFromStringSingular() {
-        assertEquals(ObjectTypes.ACCOUNT, input.getObjectTypeFromStringSingular("ACCOUNT"));
-        assertEquals(ObjectTypes.ACCOUNT, input.getObjectTypeFromStringSingular("account"));
+        assertEquals(ObjectType.ACCOUNT, input.getObjectTypeFromStringSingular("ACCOUNT"));
+        assertEquals(ObjectType.ACCOUNT, input.getObjectTypeFromStringSingular("account"));
         assertNull(input.getObjectTypeFromStringSingular("abc"));
     }
 
     @Test
     void getObjectTypeFromStringPlural() {
-        assertEquals(ObjectTypes.ACCOUNT, input.getObjectTypeFromStringPlural("ACCOUNTS"));
-        assertEquals(ObjectTypes.ACCOUNT, input.getObjectTypeFromStringPlural("accounts"));
+        assertEquals(ObjectType.ACCOUNT, input.getObjectTypeFromStringPlural("ACCOUNTS"));
+        assertEquals(ObjectType.ACCOUNT, input.getObjectTypeFromStringPlural("accounts"));
         assertNull(input.getObjectTypeFromStringPlural("abc"));
     }
 }

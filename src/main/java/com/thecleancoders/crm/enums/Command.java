@@ -7,7 +7,7 @@ public enum Command {
     CONVERT("CONVERT"),
     CLOSE_LOST("CLOSE-LOST"),
     CLOSE_WON("CLOSE-WON"),
-    CLOSE_OPEN("CLOSE-OPEN"),
+    OPEN("OPEN"),
     EXIT("EXIT");
 
     private String expectedInput;
