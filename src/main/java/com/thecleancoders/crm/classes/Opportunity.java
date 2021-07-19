@@ -7,7 +7,7 @@ public class Opportunity {
 
     //Properties
 
-    private int index = 1;
+    private static int index = 1;
     private int id;
     private Product product;
     private int quantity;
@@ -16,20 +16,16 @@ public class Opportunity {
 
     //Constructor
 
-    public Opportunity(int id, Product product, int quantity, Contact decisionMaker) {
-        index++;
-        setId(index);
+    public Opportunity(Product product, int quantity, Contact decisionMaker) {
+        this.id = index;
         setProduct(product);
         setQuantity(quantity);
         setDecisionMaker(decisionMaker);
         setStatus(Status.OPEN);
+        index++;
     }
 
     // Setters
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public void setProduct(Product product) {
         this.product = product;
