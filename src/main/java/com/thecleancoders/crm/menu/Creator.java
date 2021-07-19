@@ -14,22 +14,22 @@ public class Creator {
         this.printer = printer;
     }
 
-    public static Account createAccount() {
+    public Account createAccount() {
         // asks user all the necessary info and then calls constructor
         return new Account();
     }
 
-    public static Contact createContact() {
+    public Contact createContact() {
         // asks user all the necessary info and then calls constructor
         return new Contact();
     }
 
-    public static Lead createLead() {
+    public Lead createLead() {
         // asks user all the necessary info and then calls constructor
         return new Lead();
     }
 
-    public static Opportunity createOpportunity() {
+    public Opportunity createOpportunity() {
         // asks user all the necessary info and then calls constructor
         return new Opportunity();
     }

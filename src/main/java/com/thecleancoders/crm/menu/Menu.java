@@ -61,16 +61,16 @@ public class Menu {
         System.out.println("New " + objectType + " gets created");
         switch (objectType) {
             case ACCOUNT:
-                Creator.createAccount();
+                creator.createAccount();
                 break;
             case CONTACT:
-                Creator.createContact();
+                creator.createContact();
                 break;
             case LEAD:
-                Creator.createLead();
+                creator.createLead();
                 break;
             case OPPORTUNITY:
-                Creator.createOpportunity();
+                creator.createOpportunity();
                 break;
         }
     }
