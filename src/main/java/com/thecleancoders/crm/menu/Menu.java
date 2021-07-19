@@ -7,6 +7,7 @@ import com.thecleancoders.crm.enums.Status;
 public class Menu {
     private Printer printer = new Printer();
     private Input input = new Input(printer);
+    private Creator creator = new Creator(input, printer);
 
     public Menu() {
     }
@@ -58,6 +59,20 @@ public class Menu {
 
     public void create(ObjectType objectType) {
         System.out.println("New " + objectType + " gets created");
+        switch (objectType) {
+            case ACCOUNT:
+                Creator.createAccount();
+                break;
+            case CONTACT:
+                Creator.createContact();
+                break;
+            case LEAD:
+                Creator.createLead();
+                break;
+            case OPPORTUNITY:
+                Creator.createOpportunity();
+                break;
+        }
     }
 
     public void show(ObjectType objectType) {
