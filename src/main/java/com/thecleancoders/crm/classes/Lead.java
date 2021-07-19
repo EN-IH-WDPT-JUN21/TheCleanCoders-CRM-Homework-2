@@ -10,7 +10,7 @@ public class Lead {
     private String phoneNumber;
     private String email;
     private String companyName;
-    private static List<Lead> leadsList = new ArrayList<>();
+    private static List<Lead> allLeads = new ArrayList<>();
 
     //constructor
 
@@ -66,17 +66,18 @@ public class Lead {
     }
 
     public List<Lead> getLeadsList() {
-        return leadsList;
+        return allLeads;
     }
 
     public void setLeadsList(List<Lead> leadsList) {
-        this.leadsList = leadsList;
+        this.allLeads = leadsList;
     }
 
     public static void showLeads(){}
     public static void lookUpLeadId(int leadId){}
-    public static void convertToOpportunity(int leadId){}
+    public static void convertToOpportunity(){}
     public static void remove(){}
+
 
     @Override
     public String toString() {
