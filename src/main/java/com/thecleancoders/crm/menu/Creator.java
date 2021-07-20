@@ -16,21 +16,21 @@ public class Creator {
 
     public Account createAccount() {
         // asks user all the necessary info and then calls constructor
-        return new Account();
+        return null;
     }
 
     public Contact createContact() {
         // asks user all the necessary info and then calls constructor
-        return new Contact();
+        return null;
     }
 
     public Lead createLead() {
         // asks user all the necessary info and then calls constructor
-        return new Lead();
+        return null;
     }
 
     public Opportunity createOpportunity() {
         // asks user all the necessary info and then calls constructor
-        return new Opportunity();
+        return null;
     }
 }

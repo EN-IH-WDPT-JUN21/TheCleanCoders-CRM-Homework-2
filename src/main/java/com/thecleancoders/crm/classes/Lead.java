@@ -1,5 +1,7 @@
 package com.thecleancoders.crm.classes;
 
+import com.thecleancoders.crm.enums.Product;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -77,14 +79,9 @@ public class Lead {
 
     public static void lookUpLeadId(int leadId){}
 
-    public static void convertToOpportunity(Product product, int quantity){
-        Contact contact = new Contact(this);
-        Oportunity oportunity = new oportunity(product, quantity, contact);
-        allLeads.remove(this);
-    }
-    public static void remove(){
-        allLeads.remove(this);
-    }
+    public static void convertToOpportunity(Product product, int quantity){}
+
+    public static void remove(){}
 
 
     @Override

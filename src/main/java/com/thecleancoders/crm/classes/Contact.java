@@ -3,6 +3,7 @@ package com.thecleancoders.crm.classes;
 import com.thecleancoders.crm.main.Main;
 
 public class Contact {
+    private static int index = 0;
     private int id;
     private String name;
     private String phoneNumber;
@@ -10,16 +11,8 @@ public class Contact {
     private Lead lead;
 
     public Contact(Lead lead) {
-        //The id must be an increment of the last one created. Let's assume there is an ArrayList
-        //of Contact Objects.So, the id of this object will be the id of the last object of the array
-        // plus one.
-        if (Main.contactsList.size() < 1) {
-            this.id = 0;
-        } else {
-            this.id = Main.contactsList.get(Main.contactsList.size() - 1).getId() + 1;
-        }
-        // The new Contact object will have the same name, phoneNumber and emailAddress as the Lead from which
-        // it comes to existence, using it's getters
+        index++;
+        setId(index);
         this.name = lead.getName();
         this.phoneNumber = lead.getPhoneNumber();
         this.email = lead.getEmail();
