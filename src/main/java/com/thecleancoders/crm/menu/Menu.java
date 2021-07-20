@@ -124,7 +124,7 @@ public class Menu {
     public void changeStatus(Status status, int id) {
         System.out.println("Changes OPPORTUNITY with and id of " + id + " status to " + status + ".");
 //        Opportunity opportunity = Opportunity.getByID();
-//        opportunity.changeStatus(status);
+//        opportunity.setStatus(status);
 
     }
 }
