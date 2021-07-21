@@ -12,6 +12,7 @@ public class Contact extends Item{
     private String name;
     private String phoneNumber;
     private String email;
+    private String companyName;
     protected static List<Item> allContacts = new ArrayList<>();
 
     // Constructor
@@ -21,6 +22,7 @@ public class Contact extends Item{
         setName(lead.getName());
         setPhoneNumber(lead.getPhoneNumber());
         setEmailAddress(lead.getEmail());
+        setCompanyName(lead.getCompanyName());
     }
 
     // Methods
@@ -55,6 +57,14 @@ public class Contact extends Item{
         this.email = email;
     }
 
+    public String getCompanyName() {
+        return this.companyName;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
+    }
+
     public static List<Item> getAllContacts() {
         return allContacts;
     }
@@ -64,7 +74,8 @@ public class Contact extends Item{
         return "=== Contact " + getId() + " ===" + '\n' +
                 "· name : " + name + '\n' +
                 "· phone number : " + phoneNumber + '\n' +
-                "· email : " + email + '\n';
+                "· email : " + email + '\n' +
+                "· company name :" + companyName + '\n';
     }
 }
 
