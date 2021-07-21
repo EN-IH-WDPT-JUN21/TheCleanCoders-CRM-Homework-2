@@ -13,7 +13,7 @@ public class Lead extends Item{
     private String phoneNumber;
     private String email;
     private String companyName;
-    private static List<Item> allLeads = new ArrayList<>();
+    protected static List<Item> allLeads = new ArrayList<>();
 
     // Constructor
 
@@ -35,9 +35,17 @@ public class Lead extends Item{
 
     public static void lookUpLeadId(int leadId){}
 
-    public static void convertToOpportunity(Product product, int quantity){}
+    public void convertToOpportunity(Product product, int quantity){
+        Contact contact = new Contact(this);
+        Contact.addContactToList(contact);
+        Opportunity opportunity = new Opportunity(product, quantity, contact);
+        Opportunity.addOpportunityToList(opportunity);
+        allLeads.remove(this);
+    }
 
-    public static void remove(){}
+    public void removeLead(){
+        allLeads.remove(this);
+    }
 
     // Getters and setters
 

@@ -12,7 +12,7 @@ public class Contact extends Item{
     private String name;
     private String phoneNumber;
     private String email;
-    private static List<Item> allContacts = new ArrayList<>();
+    protected static List<Item> allContacts = new ArrayList<>();
 
     // Constructor
 

@@ -117,8 +117,8 @@ public class Menu {
 
     public void convert(int id) {
         System.out.println("Converts LEAD with an id of " + id + " to OPPORTUNITY and lots of other stuff happens too.");
-//        Lead lead = Lead.getById(id);
-//        lead.convertToOpportunity();
+ //       Lead lead = Lead.getById(id);
+ //       lead.convertToOpportunity();
     }
 
     public void changeStatus(Status status, int id) {
