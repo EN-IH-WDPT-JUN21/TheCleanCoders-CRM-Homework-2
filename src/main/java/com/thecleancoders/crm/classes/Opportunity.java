@@ -3,26 +3,33 @@ package com.thecleancoders.crm.classes;
 import com.thecleancoders.crm.enums.Product;
 import com.thecleancoders.crm.enums.Status;
 
-public class Opportunity {
+import java.util.ArrayList;
+import java.util.List;
+
+public class Opportunity extends Item{
 
     //Properties
 
-    private static int index = 1;
-    private int id;
     private Product product;
     private int quantity;
     private Contact decisionMaker;
     private Status status;
+    private static List<Item> allOpportunities = new ArrayList<>();
 
     //Constructor
 
     public Opportunity(Product product, int quantity, Contact decisionMaker) {
-        this.id = index;
+        super(allOpportunities);
         setProduct(product);
         setQuantity(quantity);
         setDecisionMaker(decisionMaker);
         setStatus(Status.OPEN);
-        index++;
+    }
+
+    // Methods
+
+    public static void addOpportunityToList(Opportunity opportunity){
+        allOpportunities.add(opportunity);
     }
 
     // Setters
@@ -32,6 +39,9 @@ public class Opportunity {
     }
 
     public void setQuantity(int quantity) {
+        if (quantity <= 0) {
+            throw new IllegalArgumentException("The number of trucks must be greater than zero.");
+        }
         this.quantity = quantity;
     }
 
@@ -44,10 +54,6 @@ public class Opportunity {
     }
 
     //Getters
-
-    public int getId() {
-        return this.id;
-    }
 
     public Product getProduct() {
         return this.product;
@@ -65,13 +71,17 @@ public class Opportunity {
         return status;
     }
 
+    public static List<Item> getAllOpportunities() {
+        return allOpportunities;
+    }
+
     public String getOpportunityInfo() {
         return "Product: " + this.product + ". Quantity: " + this.quantity + ". STATUS: " + this.status;
     }
 
     @Override
     public String toString() {
-        return "=== Opportunity " + id + " ===" + '\n' +
+        return "=== Opportunity " + getId() + " ===" + '\n' +
                 "· product : " + product + '\n' +
                 "· quantity : " + quantity + '\n' +
                 "· decision maker : " + decisionMaker + '\n' +

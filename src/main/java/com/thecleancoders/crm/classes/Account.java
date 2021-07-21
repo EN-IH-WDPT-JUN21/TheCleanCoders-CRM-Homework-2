@@ -5,22 +5,24 @@ import com.thecleancoders.crm.enums.Industry;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Account {
-    private static int index = 0;
-    private int accountId;
+public class Account extends Item{
+
+    // Properties
+
     private String companyName;
     private Industry industry;
     private int employeeCount;
     private String city;
     private String country;
+    private static List<Item> allAccounts = new ArrayList<>();
+
     private List<Contact> contactList = new ArrayList<>();
     private List<Opportunity> opportunityList = new ArrayList<>();
 
     // Constructor
 
     public Account(Lead lead, Contact contact, Opportunity opportunity, Industry industry, int employeeCount, String city, String country) {
-        index++;
-        setAccountId(index);
+        super(allAccounts);
         // The CRM takes the Company name from Lead Object
         setCompanyName(lead.getCompanyName());
         // The CRM prompts user for the industry, number of employees, city, and country of Mike’s company.
@@ -29,19 +31,20 @@ public class Account {
         setCity(city);
         setCountry(country);
         // The CRM adds the Contact to the contactList of the Account and the new Opportunity to the opportunityList of the Account.
-        addContactToList(contact);
-        addOpportunityToList(opportunity);
+        Contact.addContactToList(contact);
+        Opportunity.addOpportunityToList(opportunity);
     }
 
-    // getters and setters
-    public int getAccountId() {
-        return accountId;
+    // Methods
+
+    public static void addAccountToList(Account account){
+        allAccounts.add(account);
     }
 
-    public void setAccountId(int accountId) { this.accountId = accountId; }
+    // Getters and setters
 
     public String getCompanyName() {
-        return companyName;
+        return this.companyName;
     }
 
     public void setCompanyName(String companyName) {
@@ -49,7 +52,7 @@ public class Account {
     }
 
     public Industry getIndustry() {
-        return industry;
+        return this.industry;
     }
 
     public void setIndustry(Industry industry) {
@@ -57,7 +60,7 @@ public class Account {
     }
 
     public int getEmployeeCount() {
-        return employeeCount;
+        return this.employeeCount;
     }
 
     public void setEmployeeCount(int employeeCount) {
@@ -65,7 +68,7 @@ public class Account {
     }
 
     public String getCity() {
-        return city;
+        return this.city;
     }
 
     public void setCity(String city) {
@@ -73,37 +76,31 @@ public class Account {
     }
 
     public String getCountry() {
-        return country;
+        return this.country;
     }
 
     public void setCountry(String country) {
         this.country = country;
     }
 
+    public static List<Item> getAllAccounts() {
+        return allAccounts;
+    }
+
     public List<Contact> getContactList() {
-        return contactList;
+        return this.contactList;
     }
 
     public List<Opportunity> getOpportunityList() {
-        return opportunityList;
-    }
-
-    public void addContactToList(Contact contact) {
-        contactList.add(contact);
-    }
-
-    public void addOpportunityToList(Opportunity opportunity) {
-        opportunityList.add(opportunity);
+        return this.opportunityList;
     }
 
     @Override
     public String toString() {
-        return "Account{" +
-                "accountId=" + accountId +
-                ", industry=" + industry +
-                ", employeeCount=" + employeeCount +
-                ", city='" + city + '\'' +
-                ", country='" + country + '\'' +
-                '}';
+        return "=== Account" + getId() + " ===" + '\n' +
+                "· industry : " + industry + '\n' +
+                "· employeeCount : " + employeeCount + '\n' +
+                "· city : " + city + '\n' +
+                "· country : " + country + '\n';
     }
 }
