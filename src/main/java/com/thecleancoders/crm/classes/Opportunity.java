@@ -5,6 +5,7 @@ import com.thecleancoders.crm.enums.Status;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Opportunity extends Item{
 
@@ -30,6 +31,22 @@ public class Opportunity extends Item{
 
     public static void addOpportunityToList(Opportunity opportunity){
         allOpportunities.add(opportunity);
+    }
+
+    public void removeOpportunityFromList(){
+        allOpportunities.remove(this);
+    }
+
+    public static void removeAllOpportunitiesFromList(){
+        allOpportunities.removeAll(allOpportunities);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Opportunity that = (Opportunity) o;
+        return quantity == that.quantity && product == that.product && Objects.equals(decisionMaker, that.decisionMaker) && status == that.status;
     }
 
     // Setters

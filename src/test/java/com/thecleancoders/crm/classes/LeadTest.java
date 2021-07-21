@@ -8,10 +8,10 @@ import static org.junit.jupiter.api.Assertions.*;
 class LeadTest {
 
     @Test
-    void addLead() {
+    void addLeadToList() {
         int sizeLeadListBeforeAddNewLead = Lead.allLeads.size();
         Lead lead = new Lead("Georg", "123456789", "georg_is_fun@fun.com","Georg Fun");
-        Lead.addLead(lead);
+        Lead.addLeadToList(lead);
         int sizeLeadListAfterAddNewLead = Lead.allLeads.size();
         assertEquals(sizeLeadListBeforeAddNewLead+1,sizeLeadListAfterAddNewLead);
     }

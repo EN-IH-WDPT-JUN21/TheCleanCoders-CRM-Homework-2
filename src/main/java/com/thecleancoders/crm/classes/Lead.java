@@ -27,7 +27,7 @@ public class Lead extends Item{
 
     // Methods
 
-    public static void addLead(Lead lead){
+    public static void addLeadToList(Lead lead){
         allLeads.add(lead);
     }
 
