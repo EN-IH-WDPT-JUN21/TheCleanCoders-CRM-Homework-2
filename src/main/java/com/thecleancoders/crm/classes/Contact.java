@@ -2,32 +2,37 @@ package com.thecleancoders.crm.classes;
 
 import com.thecleancoders.crm.main.Main;
 
-public class Contact {
-    private static int index = 0;
-    private int id;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Contact extends Item{
+
+    // Properties
+
     private String name;
     private String phoneNumber;
     private String email;
-    private Lead lead;
+    private static List<Item> allContacts = new ArrayList<>();
+
+    // Constructor
 
     public Contact(Lead lead) {
-        index++;
-        setId(index);
-        this.name = lead.getName();
-        this.phoneNumber = lead.getPhoneNumber();
-        this.email = lead.getEmail();
+        super(allContacts);
+        setName(lead.getName());
+        setPhoneNumber(lead.getPhoneNumber());
+        setEmailAddress(lead.getEmail());
     }
 
-    public int getId() {
-        return id;
+    // Methods
+
+    public static void addContactToList(Contact contact){
+        allContacts.add(contact);
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+    // Setters and getters
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public void setName(String name) {
@@ -35,7 +40,7 @@ public class Contact {
     }
 
     public String getPhoneNumber() {
-        return phoneNumber;
+        return this.phoneNumber;
     }
 
     public void setPhoneNumber(String phoneNumber) {
@@ -43,12 +48,23 @@ public class Contact {
     }
 
     public String getEmail() {
-        return email;
+        return this.email;
     }
 
-    public void setEmailAddress(String emailAddress) {
+    public void setEmailAddress(String email) {
         this.email = email;
     }
 
+    public static List<Item> getAllContacts() {
+        return allContacts;
+    }
+
+    @Override
+    public String toString() {
+        return "=== Contact " + getId() + " ===" + '\n' +
+                "· name : " + name + '\n' +
+                "· phone number : " + phoneNumber + '\n' +
+                "· email : " + email + '\n';
+    }
 }
 
