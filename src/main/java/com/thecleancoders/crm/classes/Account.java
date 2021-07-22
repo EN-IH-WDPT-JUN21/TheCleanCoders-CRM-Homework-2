@@ -31,14 +31,22 @@ public class Account extends Item{
         setCity(city);
         setCountry(country);
         // The CRM adds the Contact to the contactList of the Account and the new Opportunity to the opportunityList of the Account.
-        Contact.addContactToList(contact);
-        Opportunity.addOpportunityToList(opportunity);
+        addContactToList(contact);
+        addOpportunityToList(opportunity);
     }
 
     // Methods
 
     public static void addAccountToList(Account account){
         allAccounts.add(account);
+    }
+
+    public void addContactToList(Contact contact) {
+        contactList.add(contact);
+    }
+
+    public void addOpportunityToList(Opportunity opportunity) {
+        opportunityList.add(opportunity);
     }
 
     // Getters and setters

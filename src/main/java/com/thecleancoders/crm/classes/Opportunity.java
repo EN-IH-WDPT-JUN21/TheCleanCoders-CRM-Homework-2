@@ -29,15 +29,15 @@ public class Opportunity extends Item{
 
     // Methods
 
-    public static void addOpportunityToList(Opportunity opportunity){
+    public static void addOpportunity(Opportunity opportunity){
         allOpportunities.add(opportunity);
     }
 
-    public void removeOpportunityFromList(){
+    public void removeOpportunity(){
         allOpportunities.remove(this);
     }
 
-    public static void removeAllOpportunitiesFromList(){
+    public static void removeAllOpportunities(){
         allOpportunities.removeAll(allOpportunities);
     }
 

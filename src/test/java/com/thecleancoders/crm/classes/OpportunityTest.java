@@ -18,12 +18,12 @@ class OpportunityTest {
         lead = new Lead("Travis", "666778899", "travis@onecompany.com", "Company One");
         contact = new Contact(lead);
         opp1 = new Opportunity(Product.BOX, 200, contact);
-        Opportunity.addOpportunityToList(opp1);
+        Opportunity.addOpportunity(opp1);
     }
 
     @AfterEach
     void tearDown() {
-        Opportunity.removeAllOpportunitiesFromList();
+        Opportunity.removeAllOpportunities();
     }
 
     @Test
@@ -31,7 +31,7 @@ class OpportunityTest {
     void addOpportunityToList_correctAddition() {
         int sizeOpportunityListBeforeAddNewOpportunity = Opportunity.allOpportunities.size();
         Opportunity opp2 = new Opportunity(Product.FLATBED, 100, contact);
-        Opportunity.addOpportunityToList(opp2);
+        Opportunity.addOpportunity(opp2);
         int sizeOpportunityListAfterAddNewOpportunity = Opportunity.allOpportunities.size();
         assertEquals(sizeOpportunityListBeforeAddNewOpportunity + 1, sizeOpportunityListAfterAddNewOpportunity);
     }
@@ -40,7 +40,7 @@ class OpportunityTest {
     @DisplayName("Set a different id for each Opportunity Object")
     public void setId_generateNewOpportunityObject_idNotEqual(){
         Opportunity opp2 = new Opportunity(Product.FLATBED, 100, contact);
-        Opportunity.addOpportunityToList(opp2);
+        Opportunity.addOpportunity(opp2);
         assertNotEquals(opp1.getId(), opp2.getId());
     }
 
@@ -56,7 +56,7 @@ class OpportunityTest {
     @DisplayName("getById() returns an exception if the id given is not corresponding to any Opportunity object")
     public void getById_passWrongId_NullPointerException(){
         Opportunity opp2 = new Opportunity(Product.FLATBED, 100, contact);
-        Opportunity.addOpportunityToList(opp2);
+        Opportunity.addOpportunity(opp2);
         List<Item> listOpp = Opportunity.getAllOpportunities();
         assertThrows(NullPointerException.class, () -> Opportunity.getById(3, listOpp));
     }

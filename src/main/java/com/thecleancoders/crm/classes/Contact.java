@@ -27,7 +27,7 @@ public class Contact extends Item{
 
     // Methods
 
-    public static void addContactToList(Contact contact){
+    public static void addContact(Contact contact){
         allContacts.add(contact);
     }
 
