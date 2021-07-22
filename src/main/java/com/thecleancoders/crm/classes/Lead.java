@@ -27,23 +27,13 @@ public class Lead extends Item{
 
     // Methods
 
-    public static void addLead(Lead lead){
-        allLeads.add(lead);
-    }
-
     public static void showLeads(){}
 
     public static void lookUpLeadId(int leadId){}
 
     public void convertToOpportunity(Product product, int quantity){
         Contact contact = new Contact(this);
-        Contact.addContact(contact);
         Opportunity opportunity = new Opportunity(product, quantity, contact);
-        Opportunity.addOpportunity(opportunity);
-        allLeads.remove(this);
-    }
-
-    public void removeLead(){
         allLeads.remove(this);
     }
 

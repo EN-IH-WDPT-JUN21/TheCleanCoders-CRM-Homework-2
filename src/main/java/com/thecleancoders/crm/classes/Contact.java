@@ -25,12 +25,6 @@ public class Contact extends Item{
         setCompanyName(lead.getCompanyName());
     }
 
-    // Methods
-
-    public static void addContact(Contact contact){
-        allContacts.add(contact);
-    }
-
     // Setters and getters
 
     public String getName() {
@@ -76,6 +70,14 @@ public class Contact extends Item{
                 "· phone number : " + phoneNumber + '\n' +
                 "· email : " + email + '\n' +
                 "· company name :" + companyName + '\n';
+    }
+
+    public String toStringInOppClass() {
+        return "contact " + getId() + '\n' +
+                "· name : " + name + '\n' +
+                "· phone number : " + phoneNumber + '\n' +
+                "· email : " + email + '\n' +
+                "· company name :" + companyName;
     }
 }
 

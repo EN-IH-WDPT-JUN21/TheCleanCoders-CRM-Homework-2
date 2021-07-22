@@ -37,10 +37,6 @@ public class Account extends Item{
 
     // Methods
 
-    public static void addAccountToList(Account account){
-        allAccounts.add(account);
-    }
-
     public void addContactToList(Contact contact) {
         contactList.add(contact);
     }

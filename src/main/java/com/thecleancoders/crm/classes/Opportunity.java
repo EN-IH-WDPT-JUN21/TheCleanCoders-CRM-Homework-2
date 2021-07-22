@@ -29,18 +29,6 @@ public class Opportunity extends Item{
 
     // Methods
 
-    public static void addOpportunity(Opportunity opportunity){
-        allOpportunities.add(opportunity);
-    }
-
-    public void removeOpportunity(){
-        allOpportunities.remove(this);
-    }
-
-    public static void removeAllOpportunities(){
-        allOpportunities.removeAll(allOpportunities);
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -101,7 +89,7 @@ public class Opportunity extends Item{
         return "=== Opportunity " + getId() + " ===" + '\n' +
                 "· product : " + product + '\n' +
                 "· quantity : " + quantity + '\n' +
-                "· decision maker : " + decisionMaker + '\n' +
+                "· decision maker : " + decisionMaker.toStringInOppClass() + '\n' +
                 "· status : " + status + '\n';
     }
 }
