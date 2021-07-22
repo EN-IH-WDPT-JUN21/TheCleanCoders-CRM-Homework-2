@@ -101,16 +101,16 @@ public class Menu {
         System.out.println("Lookups " + objectType + " with and id of " + id + ".");
         switch (objectType) {
             case ACCOUNT:
-//                printer.print(Account.getById(id).toString());
+                printer.print(Account.getById(id, Account.getAllAccounts()).toString());
                 break;
             case CONTACT:
-//                printer.print(Contact.getById(id).toString());
+                printer.print(Contact.getById(id, Contact.getAllContacts()).toString());
                 break;
             case LEAD:
-//                printer.print(Lead.getById(id).toString());
+               printer.print(Lead.getById(id, Lead.getAllLeads()).toString());
                 break;
             case OPPORTUNITY:
-//                printer.print(Opportunity.getById(id).toString());
+                printer.print(Opportunity.getById(id, Opportunity.getAllOpportunities()).toString());
                 break;
         }
     }
