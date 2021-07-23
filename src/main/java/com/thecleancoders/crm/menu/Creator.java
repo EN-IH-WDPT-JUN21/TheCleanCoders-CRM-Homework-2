@@ -4,6 +4,7 @@ import com.thecleancoders.crm.classes.Account;
 import com.thecleancoders.crm.classes.Contact;
 import com.thecleancoders.crm.classes.Lead;
 import com.thecleancoders.crm.classes.Opportunity;
+import com.thecleancoders.crm.enums.Product;
 
 public class Creator {
     private Input input;
@@ -14,23 +15,25 @@ public class Creator {
         this.printer = printer;
     }
 
-    public Account createAccount() {
+    public void createAccount() {
         // asks user all the necessary info and then calls constructor
-        return null;
     }
 
-    public Contact createContact() {
+    public void createContact() {
         // asks user all the necessary info and then calls constructor
-        return null;
     }
 
-    public Lead createLead() {
+    public void createLead() {
         // asks user all the necessary info and then calls constructor
-        return null;
     }
 
-    public Opportunity createOpportunity() {
+    public void createOpportunity() {
         // asks user all the necessary info and then calls constructor
-        return null;
     }
+
+    public void createOpportunityFromLead(Lead lead) {
+        // asks user about product type and quantity
+//        lead.convertToOpportunity(product, quantity);
+    }
+
 }
