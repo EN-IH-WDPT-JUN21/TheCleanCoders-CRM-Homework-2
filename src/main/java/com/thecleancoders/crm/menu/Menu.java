@@ -6,6 +6,7 @@ import com.thecleancoders.crm.classes.Lead;
 import com.thecleancoders.crm.classes.Opportunity;
 import com.thecleancoders.crm.enums.Command;
 import com.thecleancoders.crm.enums.ObjectType;
+import com.thecleancoders.crm.enums.Product;
 import com.thecleancoders.crm.enums.Status;
 
 public class Menu {
@@ -101,30 +102,30 @@ public class Menu {
         System.out.println("Lookups " + objectType + " with and id of " + id + ".");
         switch (objectType) {
             case ACCOUNT:
-//                printer.print(Account.getById(id).toString());
+                printer.print(Account.getById(id, Account.getAllAccounts()).toString());
                 break;
             case CONTACT:
-//                printer.print(Contact.getById(id).toString());
+                printer.print(Contact.getById(id, Contact.getAllContacts()).toString());
                 break;
             case LEAD:
-//                printer.print(Lead.getById(id).toString());
+               printer.print(Lead.getById(id, Lead.getAllLeads()).toString());
                 break;
             case OPPORTUNITY:
-//                printer.print(Opportunity.getById(id).toString());
+                printer.print(Opportunity.getById(id, Opportunity.getAllOpportunities()).toString());
                 break;
         }
     }
 
     public void convert(int id) {
         System.out.println("Converts LEAD with an id of " + id + " to OPPORTUNITY and lots of other stuff happens too.");
-//        Lead lead = Lead.getById(id);
-//        lead.convertToOpportunity();
+        Lead lead = (Lead) Lead.getById(id, Lead.getAllLeads());
+        creator.createOpportunityFromLead(lead);
     }
 
     public void changeStatus(Status status, int id) {
         System.out.println("Changes OPPORTUNITY with and id of " + id + " status to " + status + ".");
-//        Opportunity opportunity = Opportunity.getByID();
-//        opportunity.setStatus(status);
+        Opportunity opportunity = (Opportunity) Opportunity.getById(id, Opportunity.getAllOpportunities());
+        opportunity.setStatus(status);
 
     }
 }

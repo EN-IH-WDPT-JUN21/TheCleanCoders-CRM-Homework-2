@@ -5,38 +5,42 @@ import com.thecleancoders.crm.enums.Product;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Lead {
-    private static int index = 0;
-    private int leadId;
+public class Lead extends Item{
+
+    // Properties
+
     private String name;
     private String phoneNumber;
     private String email;
     private String companyName;
-    private static List<Lead> allLeads = new ArrayList<>();
+    protected static List<Item> allLeads = new ArrayList<>();
 
-    //constructor
+    // Constructor
 
     public Lead(String name, String phoneNumber, String email, String companyName) {
-        index++;
-        this.leadId = index;
-        this.name = name;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
-        this.companyName = companyName;
+        super(allLeads);
+        setName(name);
+        setPhoneNumber(phoneNumber);
+        setEmail(email);
+        setCompanyName(companyName);
     }
 
-    //getters and setters
+    // Methods
 
-    public int getLeadId() {
-        return leadId;
+    public static void showLeads(){}
+
+    public static void lookUpLeadId(int leadId){}
+
+    public void convertToOpportunity(Product product, int quantity){
+        Contact contact = new Contact(this);
+        Opportunity opportunity = new Opportunity(product, quantity, contact);
+        allLeads.remove(this);
     }
 
-    public void setLeadId(int leadId) {
-        this.leadId = leadId;
-    }
+    // Getters and setters
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public void setName(String name) {
@@ -44,7 +48,7 @@ public class Lead {
     }
 
     public String getPhoneNumber() {
-        return phoneNumber;
+        return this.phoneNumber;
     }
 
     public void setPhoneNumber(String phoneNumber) {
@@ -52,7 +56,7 @@ public class Lead {
     }
 
     public String getEmail() {
-        return email;
+        return this.email;
     }
 
     public void setEmail(String email) {
@@ -60,40 +64,24 @@ public class Lead {
     }
 
     public String getCompanyName() {
-        return companyName;
+        return this.companyName;
     }
 
     public void setCompanyName(String companyName) {
         this.companyName = companyName;
     }
 
-    public List<Lead> getLeadsList() {
+    public static List<Item> getAllLeads() {
         return allLeads;
     }
 
-    public void setLeadsList(List<Lead> leadsList) {
-        this.allLeads = leadsList;
-    }
-
-    public static void showLeads(){}
-
-    public static void lookUpLeadId(int leadId){}
-
-    public static void convertToOpportunity(Product product, int quantity){}
-
-    public static void remove(){}
-
-
     @Override
     public String toString() {
-        return "Lead{" +
-                "leadId=" + leadId +
-                ", name=" + name +
-                ", phoneNumber=" + phoneNumber +
-                ", email='" + email + '\'' +
-                ", companyName='" + companyName + '\'' +
-                '}';
+        return "=== Lead " + getId() + " ===" + '\n' +
+                "· name : " + name + '\n' +
+                "· phone number : " + phoneNumber + '\n' +
+                "· email : " + email + '\n' +
+                "· company name : " + companyName + '\n';
     }
-
 
 }
