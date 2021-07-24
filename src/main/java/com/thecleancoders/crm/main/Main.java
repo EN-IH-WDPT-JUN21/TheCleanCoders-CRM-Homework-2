@@ -6,7 +6,12 @@ import com.thecleancoders.crm.classes.Opportunity;
 import com.thecleancoders.crm.enums.Product;
 import com.thecleancoders.crm.menu.Menu;
 
+import java.util.ArrayList;
+
 public class Main {
+    
+    public static ArrayList<Lead> leadsList = new ArrayList<Lead>();
+    
     public static void main(String[] args) {
 
 //        Lead lead = new Lead("Travis", "666778899", "travis@onecompany.com", "Company One");
