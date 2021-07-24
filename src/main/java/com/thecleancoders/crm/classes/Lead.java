@@ -1,5 +1,6 @@
 package com.thecleancoders.crm.classes;
 
+import com.thecleancoders.crm.enums.Industry;
 import com.thecleancoders.crm.enums.Product;
 
 import java.util.ArrayList;
@@ -31,9 +32,10 @@ public class Lead extends Item{
 
     public static void lookUpLeadId(int leadId){}
 
-    public void convertToOpportunity(Product product, int quantity){
+    public void convertToOpportunity(Product product, int quantity, Industry industry, int empl, String city, String country){
         Contact contact = new Contact(this);
         Opportunity opportunity = new Opportunity(product, quantity, contact);
+        Account account = new Account(this, contact, opportunity, industry, empl, city, country);
         allLeads.remove(this);
     }
 

@@ -1,12 +1,28 @@
 package com.thecleancoders.crm.classes;
 
+import com.thecleancoders.crm.enums.Industry;
 import com.thecleancoders.crm.enums.Product;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class LeadTest {
+
+    static Lead lead;
+    static Contact contact;
+    static Opportunity opportunity;
+    static Account account;
+
+    @BeforeEach
+    void setUp() {
+        lead = new Lead("Travis", "666778899", "travis@onecompany.com", "Company One");
+        contact = new Contact(lead);
+        opportunity = new Opportunity(Product.BOX, 200, contact);
+        account = new Account(lead, contact, opportunity, Industry.MANUFACTURING, 2, "Ostrava", "Czech Republic");
+    }
+
 
     @AfterEach
     void tearDown() {
@@ -26,32 +42,34 @@ class LeadTest {
 
     @Test
     void convertToOpportunity() {
-        Lead lead = new Lead("Georg", "123456789", "georg_is_fun@fun.com","Georg Fun");
+        Lead lead2 = new Lead("Georg", "123456789", "georg_is_fun@fun.com","Georg Fun");
+
         int sizeLeadListBeforeConvert = Lead.allLeads.size();
-
-        Contact contact = new Contact(lead);
         int sizeContactListBeforeConvert = Contact.allContacts.size();
-
-        Opportunity opportunity = new Opportunity(Product.BOX, 200, contact);
         int sizeOpportunityListBeforeConvert = Opportunity.allOpportunities.size();
+        int sizeAccountListBeforeConvert = Account.allAccounts.size();
 
-        lead.convertToOpportunity(Product.HYBRID, 2);
+        lead2.convertToOpportunity(Product.HYBRID, 2, Industry.ECOMMERCE, 10, "Munich", "Germany");
 
         int sizeLeadListAfterConvert = Lead.allLeads.size();
         int sizeOpportunityListAfterConvert = Opportunity.allOpportunities.size();
         int sizeContactListAfterConvert = Contact.allContacts.size();
+        int sizeAccountListAfterConvert = Account.allAccounts.size();
 
         assertEquals(sizeContactListBeforeConvert + 1, sizeContactListAfterConvert);
         assertEquals(sizeOpportunityListBeforeConvert + 1, sizeOpportunityListAfterConvert);
+        assertEquals(sizeAccountListBeforeConvert + 1, sizeAccountListAfterConvert);
         assertEquals(sizeLeadListBeforeConvert - 1, sizeLeadListAfterConvert);
     }
 
     @Test
     void removeLead() {
         Lead lead = new Lead("Georg", "123456789", "georg_is_fun@fun.com","Georg Fun");
-        int sizeLeadListBeforeRemoveLead = Lead.allLeads.size();
-        lead.removeAllFromItemList();
+       // int sizeLeadListBeforeRemoveLead = Lead.allLeads.size();
+        Lead.removeAllFromItemList();
         int sizeLeadListAfterRemoveLead = Lead.allLeads.size();
-        assertEquals(sizeLeadListBeforeRemoveLead-1,sizeLeadListAfterRemoveLead);
+        assertEquals(0,sizeLeadListAfterRemoveLead);
+        //assertEquals(sizeLeadListBeforeRemoveLead-1,sizeLeadListAfterRemoveLead);
     }
+
 }
