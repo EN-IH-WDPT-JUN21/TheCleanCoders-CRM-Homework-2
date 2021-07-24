@@ -22,7 +22,11 @@ public class Creator {
 
     //Contact depends directly of the Lead it originates from, I think it should have it as a parameter
     public void createContact(Lead lead) {
-        // asks user all the necessary info and then calls constructor
+        // asks user all the necessary info and then calls constructor.
+
+        // Note: in fact, I think all this has to do is to take the object Lead and create an object Contact with the
+        //same info. jandrevl
+        Main.contactList.add(new Contact(lead));
     }
 
     public void createLead() {
@@ -61,6 +65,5 @@ public class Creator {
         // asks user about product type and quantity
     }
 
-    public void createContact() {
-    }
+
 }

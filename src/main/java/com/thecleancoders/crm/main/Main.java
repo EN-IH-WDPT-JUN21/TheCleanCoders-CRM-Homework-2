@@ -11,6 +11,7 @@ import java.util.ArrayList;
 public class Main {
     
     public static ArrayList<Lead> leadsList = new ArrayList<Lead>();
+    public static ArrayList<Contact> contactList = new ArrayList<Contact>();
 
 
 
