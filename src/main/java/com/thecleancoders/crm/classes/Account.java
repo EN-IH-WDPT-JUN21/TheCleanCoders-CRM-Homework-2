@@ -14,7 +14,7 @@ public class Account extends Item{
     private int employeeCount;
     private String city;
     private String country;
-    private static List<Item> allAccounts = new ArrayList<>();
+    protected static List<Item> allAccounts = new ArrayList<>();
 
     private List<Contact> contactList = new ArrayList<>();
     private List<Opportunity> opportunityList = new ArrayList<>();
