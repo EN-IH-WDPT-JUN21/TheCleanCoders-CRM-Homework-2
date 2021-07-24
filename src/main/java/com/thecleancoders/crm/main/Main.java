@@ -10,15 +10,20 @@ import java.util.ArrayList;
 
 public class Main {
     
-    public static ArrayList<Lead> leadsList = new ArrayList<Lead>();
-    public static ArrayList<Contact> contactList = new ArrayList<Contact>();
+//    public static ArrayList<Lead> allLeads = new ArrayList<Lead>();
+//    public static ArrayList<Contact> allContactsList = new ArrayList<Contact>();
+//    public static ArrayList<Opportunity> allOpportunitiesList = new ArrayList<Opportunity>();
 
 
 
-    public static ArrayList<Contact> contactsList = new ArrayList<Contact>();
+
 
     
     public static void main(String[] args) {
+
+        //To test
+        Lead.allLeads.add(new Lead("Frodo", "555 4565489", "thehole@hobbiton.com",
+                "Company of the Ring"));
 
 //        Lead lead = new Lead("Travis", "666778899", "travis@onecompany.com", "Company One");
 //        Lead lead2 = new Lead("Laia", "666778899", "laia@twocompany.com", "Company Two");

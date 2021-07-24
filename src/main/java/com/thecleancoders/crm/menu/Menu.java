@@ -120,7 +120,9 @@ public class Menu {
     public void convert(int id) {
         System.out.println("Converts LEAD with an id of " + id + " to OPPORTUNITY and lots of other stuff happens too.");
         Lead lead = (Lead) Lead.getById(id, Lead.getAllLeads());
-        creator.createOpportunityFromLead(lead);
+//        creator.createOpportunityFromLead(lead);
+        creator.createContact(lead);
+        creator.createOpportunity();
     }
 
     public void changeStatus(Status status, int id) {

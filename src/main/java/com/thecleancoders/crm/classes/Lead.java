@@ -13,7 +13,7 @@ public class Lead extends Item{
     private String phoneNumber;
     private String email;
     private String companyName;
-    protected static List<Item> allLeads = new ArrayList<>();
+    public static List<Item> allLeads = new ArrayList<>();
 
     // Constructor
 

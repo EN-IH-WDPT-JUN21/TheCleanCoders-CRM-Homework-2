@@ -25,6 +25,21 @@ public class Input {
         }
     }
 
+    public int getIntegerHigherThanZero() {
+        int intValue = -1;
+        do {
+            String input = scanner.next();
+            try {
+                intValue = Integer.parseInt(input);
+            } catch (NumberFormatException exp) {
+                System.out.println("Must be Integer higher than 0");
+            }
+        } while (intValue <= 0);
+
+        return intValue;
+    }
+
+
     public void close() {
         scanner.close();
     }
