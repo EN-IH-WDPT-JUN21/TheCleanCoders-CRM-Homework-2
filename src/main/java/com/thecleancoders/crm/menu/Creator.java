@@ -19,12 +19,8 @@ public class Creator {
         // asks user all the necessary info and then calls constructor
     }
 
-    //Contact depends directly of the Lead it originates from, I think it should have it as a parameter
+    //When a contact is created automatically by Lead conversion:
     public void createContact(Lead lead) {
-        // asks user all the necessary info and then calls constructor.
-
-        // Note: in fact, I think all this has to do is to take the object Lead and create an object Contact with the
-        //same info. jandrevl
         Contact.allContacts.add(new Contact(lead));
     }
 

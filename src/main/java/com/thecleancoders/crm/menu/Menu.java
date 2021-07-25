@@ -69,8 +69,7 @@ public class Menu {
                 creator.createAccount();
                 break;
             case CONTACT:
-                //The following may not be needed...
-                // creator.createContact(Lead lead);
+                creator.createContact();
                 break;
             case LEAD:
                 creator.createLead();
