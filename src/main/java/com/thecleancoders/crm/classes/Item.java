@@ -35,8 +35,13 @@ public abstract class Item {
                 return item;
             }
         }
+
         throw new NullPointerException("This id has no related item");
     }
+
+//    public static int getListIndexByItem(Item item) {
+//        for (int i = 0; i < )
+//    }
 
     // Setters
 

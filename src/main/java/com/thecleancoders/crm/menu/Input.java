@@ -1,7 +1,9 @@
 package com.thecleancoders.crm.menu;
 
 import com.thecleancoders.crm.enums.Command;
+import com.thecleancoders.crm.enums.Industry;
 import com.thecleancoders.crm.enums.ObjectType;
+import com.thecleancoders.crm.enums.Product;
 
 import java.util.Scanner;
 
@@ -36,6 +38,7 @@ public class Input {
             }
         } while (intValue <= 0);
 
+        scanner.nextLine();
         return intValue;
     }
 
@@ -76,4 +79,49 @@ public class Input {
         }
         return null;
     }
+
+    public Industry chooseIndustry() {
+        System.out.println("\nType of Industry:" +
+                "\n1 - Produce" +
+                "\n2 - E-Commerce" +
+                "\n3 - Manufacturing" +
+                "\n4 - Medical" +
+                "\n5 - Other");
+        int input;
+        do {
+            input = getIntegerHigherThanZero();
+        } while (input > 5);
+        switch (input) {
+                case 1:
+                    return Industry.PRODUCE;
+                case 2:
+                    return Industry.ECOMMERCE;
+                case 3:
+                    return Industry.MANUFACTURING;
+                case 4:
+                    return Industry.MEDICAL;
+                default:
+                    return Industry.OTHER;
+        }
+    }
+
+    public Product chooseProduct() {
+        System.out.println("\nType of Product:\n" +
+                "1 - HYBRID\n" +
+                "2 - FLATBED\n" +
+                "3 - BOX");
+        int input;
+        do {
+            input = getIntegerHigherThanZero();
+        } while (input > 3);
+        switch (input) {
+            case 1:
+                return Product.HYBRID;
+            case 2:
+                return Product.FLATBED;
+            default:
+                return Product.BOX;
+        }
+    }
+
 }

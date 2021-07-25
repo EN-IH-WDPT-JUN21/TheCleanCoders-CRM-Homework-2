@@ -69,7 +69,7 @@ public class Menu {
                 creator.createAccount();
                 break;
             case CONTACT:
-                creator.createContact();
+                creator.createContact(); //When a CONTACT is created independently, it will ask for a LEAD Id
                 break;
             case LEAD:
                 creator.createLead();
@@ -117,11 +117,13 @@ public class Menu {
     }
 
     public void convert(int id) {
-        System.out.println("Converts LEAD with an id of " + id + " to OPPORTUNITY and lots of other stuff happens too.");
+        //When a Lead is converted, Contact, Opportunity and Account are automatically created, and the Lead must be
+        //deleted
+        System.out.println("\nConverting LEAD nr " + id + " to CONTACT, OPPORTUNITY and ACCOUNT\n");
         Lead lead = (Lead) Lead.getById(id, Lead.getAllLeads());
-//        creator.createOpportunityFromLead(lead);
         creator.createContact(lead);
         creator.createOpportunity();
+        creator.createAccount(lead);
     }
 
     public void changeStatus(Status status, int id) {
