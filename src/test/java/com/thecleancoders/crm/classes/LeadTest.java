@@ -72,4 +72,24 @@ class LeadTest {
         //assertEquals(sizeLeadListBeforeRemoveLead-1,sizeLeadListAfterRemoveLead);
     }
 
+
+    @Test
+    void setPhoneNumber() {
+        Lead lead = new Lead("Georg", "12 345 67 89", "georg_is_fun@fun.com","Georg Fun");
+        assertEquals("12 345 67 89", lead.getPhoneNumber());
+
+        Lead lead2 = new Lead("Georg", "ala ma kota", "georg_is_fun@fun.com","Georg Fun");
+        assertNull(lead2.getPhoneNumber());
+       // assertEquals("123456789", lead.getPhoneNumber());
+    }
+
+    @Test
+    void setEmail() {
+        Lead lead = new Lead("Georg", "12 345 67 89", "georg_is_fun@fun.com","Georg Fun");
+        assertEquals("georg_is_fun@fun.com", lead.getEmail());
+
+        Lead lead2 = new Lead("Georg", "123456789", "georg_is_fun@.com","Georg Fun");
+        assertNull(lead2.getEmail());
+       // assertTrue(lead.setEmail("georg@fun.com"));
+    }
 }

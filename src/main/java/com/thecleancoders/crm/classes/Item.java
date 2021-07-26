@@ -61,4 +61,16 @@ public abstract class Item {
     public static List<Item> getItemList() {
         return itemList;
     }
+
+    public static boolean isNumeric(String str) {
+        if (str == null) {
+            return false;
+        }
+        try {
+            long number = Long.parseLong(str.replaceAll(" ", ""));
+        } catch (NumberFormatException nfe) {
+            return false;
+        }
+        return true;
+    }
 }
