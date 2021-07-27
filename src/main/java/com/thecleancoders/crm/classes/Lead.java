@@ -29,6 +29,14 @@ public class Lead extends Item {
         setCompanyName(companyName);
     }
 
+    public Lead(int id, String name, String phoneNumber, String email, String companyName) {
+        super(id, allLeads);
+        setName(name);
+        setPhoneNumber(phoneNumber);
+        setEmail(email);
+        setCompanyName(companyName);
+    }
+
     // Methods
 
     public static void showLeads() {}

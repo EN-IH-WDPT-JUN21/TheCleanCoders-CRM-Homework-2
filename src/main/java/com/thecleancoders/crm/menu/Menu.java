@@ -7,6 +7,7 @@ import com.thecleancoders.crm.classes.Opportunity;
 import com.thecleancoders.crm.enums.Command;
 import com.thecleancoders.crm.enums.ObjectType;
 import com.thecleancoders.crm.enums.Status;
+import com.thecleancoders.crm.io.FileManager;
 
 import java.util.Objects;
 
@@ -14,8 +15,10 @@ public class Menu {
     private final Printer printer = new Printer();
     private final Input input = new Input(printer);
     private final Creator creator = new Creator(input, printer);
+    private final FileManager fileManager = new FileManager(printer);
 
     public Menu() {
+        fileManager.importData();
     }
 
     public void controlLoop() {
@@ -36,6 +39,7 @@ public class Menu {
             }
         } while (command != Command.EXIT);
         input.close();
+        fileManager.exportData();
     }
 
     public String[] splitInput(String string) {

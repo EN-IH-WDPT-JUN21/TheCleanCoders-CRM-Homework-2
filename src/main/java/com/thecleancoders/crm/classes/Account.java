@@ -35,6 +35,17 @@ public class Account extends Item{
         addOpportunityToList(opportunity);
     }
 
+    public Account(int id, Contact contact, Opportunity opportunity, String companyName, Industry industry, int employeeCount, String city, String country) {
+        super(id, allAccounts);
+        setCompanyName(companyName);
+        setIndustry(industry);
+        setEmployeeCount(employeeCount);
+        setCity(city);
+        setCountry(country);
+        addContactToList(contact);
+        addOpportunityToList(opportunity);
+    }
+
     // Methods
 
     public void addContactToList(Contact contact) {
