@@ -75,6 +75,14 @@ public class Lead extends Item{
         return allLeads;
     }
 
+    public static void removeItem(Lead lead) {
+        for (int i = 0; i < allLeads.size(); i++) {
+            if (lead.equals(allLeads.get(i))) {
+                allLeads.remove(i);
+            }
+        }
+    }
+
     @Override
     public String toString() {
         return "=== Lead " + getId() + " ===" + '\n' +

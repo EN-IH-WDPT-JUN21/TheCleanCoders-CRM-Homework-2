@@ -28,9 +28,9 @@ public class Creator {
         String city = input.getString();
         System.out.println("\nCountry where the Company is based:");
         String country = input.getString();
-        Account.allAccounts.add(new Account((Contact) Contact.allContacts.get(Contact.allContacts.size()-1),
+        Account account = new Account((Contact) Contact.allContacts.get(Contact.allContacts.size()-1),
                 (Opportunity) Opportunity.allOpportunities.get(Opportunity.allOpportunities.size()-1),
-                industry, employeeCount, city, country));
+                industry, employeeCount, city, country);
         System.out.println("\nNew ACCOUNT created:");
         System.out.println(Account.allAccounts.get(Account.allAccounts.size()-1).toString());
 
@@ -42,7 +42,7 @@ public class Creator {
 
     //When a contact is created automatically by Lead conversion:
     public void createContact(Lead lead) {
-        Contact.allContacts.add(new Contact(lead));
+        Contact contact = new Contact(lead);
     }
 
     //When a CONTACT is created independently, we'll overload the existing method. It will ask for a LEAD id.
@@ -51,7 +51,7 @@ public class Creator {
         System.out.println("\nPlease insert LEAD Id to be used:");
         int idLead = input.getIntegerHigherThanZero();
         Lead lead = (Lead) Lead.getById(idLead, Lead.allLeads);
-        Contact.allContacts.add(new Contact(lead));
+        Contact contact = new Contact(lead);
         System.out.println("\nNew CONTACT created:");
         System.out.println(Contact.allContacts.get(Contact.allContacts.size()-1).toString());
 
@@ -69,12 +69,10 @@ public class Creator {
         String email = input.getString();
         System.out.println("Company Name:");
         String companyName = input.getString();
+        Lead lead = new Lead(name, phoneNumber, email, companyName);
 
-        //Lead will be instantiated directly as a member of the leadsList ArrayList in the Main Class
-        Lead.allLeads.add(new Lead(name, phoneNumber, email, companyName));
-
-        //print a Lead creation Message, using Lead.toString method on the last element of leadsList, newly created
-        System.out.println("\nA new Lead was created with the following info:");
+        //print a LEAD creation message, using Lead.toString method on the last element of leadsList, newly created
+        System.out.println("\nA new LEAD was created with the following info:");
         System.out.println(Lead.allLeads.get(Lead.allLeads.size()-1).toString());
 
     }

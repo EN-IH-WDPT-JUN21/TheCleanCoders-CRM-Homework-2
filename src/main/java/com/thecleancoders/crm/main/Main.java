@@ -7,6 +7,7 @@ import com.thecleancoders.crm.enums.Product;
 import com.thecleancoders.crm.menu.Menu;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Main {
     
@@ -22,8 +23,12 @@ public class Main {
     public static void main(String[] args) {
 
         //To test
-        Lead.allLeads.add(new Lead("Frodo", "555 4565489", "thehole@hobbiton.com",
-                "Company of the Ring"));
+        System.out.println(Lead.allLeads.size());
+
+//        Lead.allLeads.add(new Lead("Frodo", "555 4565489", "thehole@hobbiton.com",
+//                "Company of the Ring"));
+        System.out.println(Lead.allLeads.toString());
+
 
 //        Lead lead = new Lead("Travis", "666778899", "travis@onecompany.com", "Company One");
 //        Lead lead2 = new Lead("Laia", "666778899", "laia@twocompany.com", "Company Two");

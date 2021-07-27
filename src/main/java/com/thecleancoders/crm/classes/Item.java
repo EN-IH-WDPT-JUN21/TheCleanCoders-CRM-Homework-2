@@ -21,9 +21,11 @@ public abstract class Item {
         itemList.add(item);
     }
 
-    public void removeItem(){
-        itemList.remove(this);
-    }
+//    public void removeItem(){
+//        itemList.remove(this);
+//    }
+
+
 
     public static void removeAllFromItemList() {
         itemList.removeAll(itemList);

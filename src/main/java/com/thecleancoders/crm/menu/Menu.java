@@ -1,13 +1,12 @@
 package com.thecleancoders.crm.menu;
 
-import com.thecleancoders.crm.classes.Account;
-import com.thecleancoders.crm.classes.Contact;
-import com.thecleancoders.crm.classes.Lead;
-import com.thecleancoders.crm.classes.Opportunity;
+import com.thecleancoders.crm.classes.*;
 import com.thecleancoders.crm.enums.Command;
 import com.thecleancoders.crm.enums.ObjectType;
 import com.thecleancoders.crm.enums.Product;
 import com.thecleancoders.crm.enums.Status;
+
+import java.util.Arrays;
 
 public class Menu {
     private Printer printer = new Printer();
@@ -124,6 +123,7 @@ public class Menu {
         creator.createContact(lead);
         creator.createOpportunity();
         creator.createAccount(lead);
+        Lead.removeItem(lead);
     }
 
     public void changeStatus(Status status, int id) {
