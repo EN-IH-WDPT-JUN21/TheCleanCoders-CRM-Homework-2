@@ -35,7 +35,7 @@ public abstract class Item {
                 return item;
             }
         }
-        throw new NullPointerException("This id has no related item");
+        throw new NullPointerException("This id has no related item. Please try again.");
     }
 
     // Setters

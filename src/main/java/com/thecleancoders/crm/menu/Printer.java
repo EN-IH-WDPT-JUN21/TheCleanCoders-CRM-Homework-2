@@ -20,4 +20,8 @@ public class Printer {
     public void printAllOpportunities() {
 
     }
+
+    public void printTypoInfo(String wrongWord) {
+        System.out.println("Incorrect command. Possible typo in the word \"" + wrongWord + "\". Please try again.");
+    }
 }
