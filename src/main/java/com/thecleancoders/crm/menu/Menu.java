@@ -21,7 +21,7 @@ public class Menu {
     public void controlLoop() {
         Command command;
         do {
-            String[] inputList = input.getString().trim().split(" ");
+            String[] inputList = splitInput(input.getString());
             command = input.getCommandFromString(inputList[0]);
             if (Objects.isNull(command)) {
                 printer.printTypoInfo(inputList[0]);
@@ -36,6 +36,10 @@ public class Menu {
             }
         } while (command != Command.EXIT);
         input.close();
+    }
+
+    public String[] splitInput(String string) {
+        return string.trim().split(" ");
     }
 
     public void interpretInput(String[] inputList) {
