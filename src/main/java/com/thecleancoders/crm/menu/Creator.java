@@ -8,6 +8,8 @@ import com.thecleancoders.crm.enums.Industry;
 import com.thecleancoders.crm.enums.Product;
 import com.thecleancoders.crm.main.Main;
 
+import java.sql.SQLOutput;
+
 public class Creator {
     private Input input;
     private Printer printer;
@@ -32,12 +34,31 @@ public class Creator {
                 (Opportunity) Opportunity.allOpportunities.get(Opportunity.allOpportunities.size()-1),
                 industry, employeeCount, city, country);
         System.out.println("\nNew ACCOUNT created:");
-        System.out.println(Account.allAccounts.get(Account.allAccounts.size()-1).toString());
+        System.out.println(account.toString());
 
     }
 
     public void createAccount() {
         //To create an account independently. Will have to request CONTACT id, OPPORTUNITY id
+        System.out.println("\nCreating an independent ACCOUNT");
+        System.out.println("\nPlease insert related CONTACT id number:");
+        int contactId = input.getIntegerHigherThanZero();
+        Contact contact = (Contact) Contact.getById(contactId, Contact.allContacts);
+        System.out.println("\nPlease insert related OPPORTUNITY id number");
+        int opportunityId = input.getIntegerHigherThanZero();
+        Opportunity opportunity = (Opportunity) Opportunity.getById(opportunityId, Opportunity.allOpportunities);
+        System.out.println("\nPlease choose the Industry of the related Company:");
+        Industry industry = input.chooseIndustry();
+        System.out.println("\nPlease insert number of employees of the Company (Integer higher than 0)");
+        int employeeCount = input.getIntegerHigherThanZero();
+        System.out.println("\nCity in which the Company is based:");
+        String city = input.getString();
+        System.out.println("And the base Country:");
+        String country = input.getString();
+        Account account = new Account(contact, opportunity, industry, employeeCount, city, country);
+        System.out.println("\nNew ACCOUNT created:");
+        System.out.println(account.toString());
+
     }
 
     //When a contact is created automatically by Lead conversion:
