@@ -74,7 +74,7 @@ public class Creator {
         Lead lead = (Lead) Lead.getById(idLead, Lead.allLeads);
         Contact contact = new Contact(lead);
         System.out.println("\nNew CONTACT created:");
-        System.out.println(Contact.allContacts.get(Contact.allContacts.size()-1).toString());
+        System.out.println(contact.toString());
 
     }
 
@@ -94,7 +94,7 @@ public class Creator {
 
         //print a LEAD creation message, using Lead.toString method on the last element of leadsList, newly created
         System.out.println("\nA new LEAD was created with the following info:");
-        System.out.println(Lead.allLeads.get(Lead.allLeads.size()-1).toString());
+        System.out.println(lead.toString());
 
     }
 
@@ -110,18 +110,12 @@ public class Creator {
         //This method should be implemented right after the createContact method, and both are triggered by the
         // "convert <id number>" command. So it will use the last contact it was created in the allContactsList array.
         //Constructing the Opportunity object, and storing it in the allOpportunitiesList:
-        Opportunity.allOpportunities.add(new Opportunity(product, quantity,
-                (Contact) Contact.allContacts.get(Contact.allContacts.size()-1)));
+        Opportunity opportunity = new Opportunity(product, quantity,
+                (Contact) Contact.allContacts.get(Contact.allContacts.size()-1));
         System.out.println("\n\nA new Opportunity was created as follows:");
-        System.out.println(Opportunity.allOpportunities.get(Opportunity.allOpportunities.size()-1).toString());
+        System.out.println(opportunity.toString());
     }
 
-
-
-
-    public void createOpportunityFromLead(Lead lead) {
-        // asks user about product type and quantity
-    }
 
 
 }
