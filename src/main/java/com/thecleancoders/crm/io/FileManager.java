@@ -37,11 +37,11 @@ public class FileManager {
             for (Item item : Lead.getAllLeads()) {
                 Lead lead = (Lead) item;
                 String leadString =
-                        lead.getId() + "," +
-                                lead.getName() + "," +
-                                lead.getPhoneNumber() + "," +
-                                lead.getEmail() + "," +
-                                lead.getCompanyName() + ",";
+                        lead.getId() + "/&/" +
+                                lead.getName() + "/&/" +
+                                lead.getPhoneNumber() + "/&/" +
+                                lead.getEmail() + "/&/" +
+                                lead.getCompanyName() + "/&/";
                 writer.write(leadString);
             }
             writer.close();
@@ -57,11 +57,11 @@ public class FileManager {
             for (Item item : Contact.getAllContacts()) {
                 Contact contact = (Contact) item;
                 String contactString =
-                        contact.getId() + "," +
-                                contact.getName() + "," +
-                                contact.getPhoneNumber() + "," +
-                                contact.getEmail() + "," +
-                                contact.getCompanyName() + ",";
+                        contact.getId() + "/&/" +
+                                contact.getName() + "/&/" +
+                                contact.getPhoneNumber() + "/&/" +
+                                contact.getEmail() + "/&/" +
+                                contact.getCompanyName() + "/&/";
                 writer.write(contactString);
             }
             writer.close();
@@ -77,11 +77,11 @@ public class FileManager {
             for (Item item : Opportunity.getAllOpportunities()) {
                 Opportunity opportunity = (Opportunity) item;
                 String opportunityString =
-                        opportunity.getId() + "," +
-                                opportunity.getProduct() + "," +
-                                opportunity.getQuantity() + "," +
-                                opportunity.getDecisionMaker().getId() + "," +
-                                opportunity.getStatus() + ",";
+                        opportunity.getId() + "/&/" +
+                                opportunity.getProduct() + "/&/" +
+                                opportunity.getQuantity() + "/&/" +
+                                opportunity.getDecisionMaker().getId() + "/&/" +
+                                opportunity.getStatus() + "/&/";
                 writer.write(opportunityString);
             }
             writer.close();
@@ -97,14 +97,14 @@ public class FileManager {
             for (Item item : Account.getAllAccounts()) {
                 Account account = (Account) item;
                 String accountString =
-                        account.getId() + "," +
-                                account.getContactList().get(0).getId() + "," +
-                                account.getOpportunityList().get(0).getId() + "," +
-                                account.getCompanyName() + "," +
-                                account.getIndustry() + "," +
-                                account.getEmployeeCount() + "," +
-                                account.getCity() + "," +
-                                account.getCountry() + ",";
+                        account.getId() + "/&/" +
+                                account.getContactList().get(0).getId() + "/&/" +
+                                account.getOpportunityList().get(0).getId() + "/&/" +
+                                account.getCompanyName() + "/&/" +
+                                account.getIndustry() + "/&/" +
+                                account.getEmployeeCount() + "/&/" +
+                                account.getCity() + "/&/" +
+                                account.getCountry() + "/&/";
                 writer.write(accountString);
             }
             writer.close();
@@ -124,7 +124,7 @@ public class FileManager {
         String filename = LEADS_FILE_NAME;
         try {
             Scanner scanner = new Scanner(new File(filename));
-            scanner.useDelimiter(",");
+            scanner.useDelimiter("/&/");
             while (scanner.hasNext()) {
                 int id = Integer.parseInt(scanner.next());
                 String name = scanner.next();
@@ -142,7 +142,7 @@ public class FileManager {
         String filename = CONTACTS_FILE_NAME;
         try {
             Scanner scanner = new Scanner(new File(filename));
-            scanner.useDelimiter(",");
+            scanner.useDelimiter("/&/");
             while (scanner.hasNext()) {
                 int id = Integer.parseInt(scanner.next());
                 String name = scanner.next();
@@ -160,7 +160,7 @@ public class FileManager {
         String filename = OPPORTUNITIES_FILE_NAME;
         try {
             Scanner scanner = new Scanner(new File(filename));
-            scanner.useDelimiter(",");
+            scanner.useDelimiter("/&/");
             while (scanner.hasNext()) {
                 int id = Integer.parseInt(scanner.next());
                 Product product = getProductFromString(scanner.next());
@@ -178,7 +178,7 @@ public class FileManager {
         String filename = ACCOUNTS_FILE_NAME;
         try {
             Scanner scanner = new Scanner(new File(filename));
-            scanner.useDelimiter(",");
+            scanner.useDelimiter("/&/");
             while (scanner.hasNext()) {
                 int id = Integer.parseInt(scanner.next());
                 Contact contact = (Contact) Contact.getById(Integer.parseInt(scanner.next()), Contact.getAllContacts());

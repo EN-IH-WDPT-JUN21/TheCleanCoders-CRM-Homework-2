@@ -116,7 +116,7 @@ public class Menu {
     }
 
     public void show(ObjectType objectType) {
-        System.out.println("Shows all " + objectType.getPluralForm() + ".");
+        System.out.println("Shows all " + objectType.getPluralForm() + ".\n");
         switch (objectType) {
             case ACCOUNT:
                 printer.printAllAccounts();
