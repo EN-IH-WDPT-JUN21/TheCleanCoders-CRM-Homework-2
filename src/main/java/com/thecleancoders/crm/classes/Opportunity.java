@@ -15,7 +15,7 @@ public class Opportunity extends Item{
     private int quantity;
     private Contact decisionMaker;
     private Status status;
-    protected static List<Item> allOpportunities = new ArrayList<>();
+    public static List<Item> allOpportunities = new ArrayList<>();
 
     //Constructor
 

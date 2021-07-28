@@ -27,9 +27,11 @@ public abstract class Item {
         itemList.add(item);
     }
 
-    public void removeItem(){
-        itemList.remove(this);
-    }
+//    public void removeItem(){
+//        itemList.remove(this);
+//    }
+
+
 
     public static void removeAllFromItemList() {
         itemList.removeAll(itemList);
@@ -41,8 +43,13 @@ public abstract class Item {
                 return item;
             }
         }
+
         throw new NullPointerException("This id has no related item. Please try again.");
     }
+
+//    public static int getListIndexByItem(Item item) {
+//        for (int i = 0; i < )
+//    }
 
     // Setters
 

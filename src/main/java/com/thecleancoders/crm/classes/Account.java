@@ -14,17 +14,18 @@ public class Account extends Item{
     private int employeeCount;
     private String city;
     private String country;
-    protected static List<Item> allAccounts = new ArrayList<>();
+    public static List<Item> allAccounts = new ArrayList<>();
+
 
     private List<Contact> contactList = new ArrayList<>();
     private List<Opportunity> opportunityList = new ArrayList<>();
 
     // Constructor
 
-    public Account(Lead lead, Contact contact, Opportunity opportunity, Industry industry, int employeeCount, String city, String country) {
+    public Account(Contact contact, Opportunity opportunity, Industry industry, int employeeCount, String city, String country) {
         super(allAccounts);
         // The CRM takes the Company name from Lead Object
-        setCompanyName(lead.getCompanyName());
+        setCompanyName(contact.getCompanyName());
         // The CRM prompts user for the industry, number of employees, city, and country of Mike’s company.
         setIndustry(industry);
         setEmployeeCount(employeeCount);
