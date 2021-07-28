@@ -27,6 +27,14 @@ public class Opportunity extends Item{
         setStatus(Status.OPEN);
     }
 
+    public Opportunity(int id, Product product, int quantity, Contact decisionMaker, Status status) {
+        super(id, allOpportunities);
+        setProduct(product);
+        setQuantity(quantity);
+        setDecisionMaker(decisionMaker);
+        setStatus(status);
+    }
+
     // Methods
 
     @Override

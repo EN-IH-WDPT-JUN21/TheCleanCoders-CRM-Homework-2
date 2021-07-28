@@ -16,6 +16,7 @@ public class Account extends Item{
     private String country;
     public static List<Item> allAccounts = new ArrayList<>();
 
+
     private List<Contact> contactList = new ArrayList<>();
     private List<Opportunity> opportunityList = new ArrayList<>();
 
@@ -31,6 +32,17 @@ public class Account extends Item{
         setCity(city);
         setCountry(country);
         // The CRM adds the Contact to the contactList of the Account and the new Opportunity to the opportunityList of the Account.
+        addContactToList(contact);
+        addOpportunityToList(opportunity);
+    }
+
+    public Account(int id, Contact contact, Opportunity opportunity, String companyName, Industry industry, int employeeCount, String city, String country) {
+        super(id, allAccounts);
+        setCompanyName(companyName);
+        setIndustry(industry);
+        setEmployeeCount(employeeCount);
+        setCity(city);
+        setCountry(country);
         addContactToList(contact);
         addOpportunityToList(opportunity);
     }
