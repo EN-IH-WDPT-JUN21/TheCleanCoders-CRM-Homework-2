@@ -39,6 +39,7 @@ public class Menu {
                 }
             }
         } while (command != Command.EXIT);
+        System.out.println("Saving all Objects. Thank you for using the cleanCRM. Have a nice day.\n\n");
         input.close();
         fileManager.exportData();
     }
