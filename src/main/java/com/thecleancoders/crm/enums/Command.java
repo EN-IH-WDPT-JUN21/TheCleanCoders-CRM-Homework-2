@@ -8,7 +8,8 @@ public enum Command {
     CLOSE_LOST("CLOSE-LOST"),
     CLOSE_WON("CLOSE-WON"),
     OPEN("OPEN"),
-    EXIT("EXIT");
+    EXIT("EXIT"),
+    HELP("HELP");
 
     private String expectedInput;
 

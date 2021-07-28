@@ -92,6 +92,9 @@ public class Menu {
                 id = Integer.parseInt(inputList[1]);
                 changeStatus(Status.OPEN, id);
                 break;
+            case HELP:
+                printer.helpPage();
+                break;
         }
     }
 
