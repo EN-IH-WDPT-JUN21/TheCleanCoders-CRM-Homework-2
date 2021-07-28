@@ -20,7 +20,7 @@ class AccountTest {
         lead = new Lead("Travis", "666778899", "travis@onecompany.com", "Company One");
         contact = new Contact(lead);
         opp1 = new Opportunity(Product.BOX, 200, contact);
-        account = new Account(lead, contact, opp1, Industry.PRODUCE,10,"Vienna", "Austria");
+        account = new Account(contact, opp1, Industry.PRODUCE,10,"Vienna", "Austria");
     }
 
     @AfterEach

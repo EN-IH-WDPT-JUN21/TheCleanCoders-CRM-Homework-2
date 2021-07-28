@@ -1,7 +1,5 @@
 package com.thecleancoders.crm.classes;
 
-import com.thecleancoders.crm.main.Main;
-
 import java.util.ArrayList;
 import java.util.List;
 

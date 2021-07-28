@@ -155,7 +155,7 @@ public class Menu {
         System.out.println("\nConverting LEAD nr " + id + " to CONTACT, OPPORTUNITY and ACCOUNT\n");
         Lead lead = (Lead) Lead.getById(id, Lead.getAllLeads());
         creator.createContact(lead);
-        creator.createOpportunity();
+        creator.createOpportunityByLeadConversion();
         creator.createAccount(lead);
         Lead.removeItem(lead);
     }

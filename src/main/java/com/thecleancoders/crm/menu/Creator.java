@@ -6,9 +6,6 @@ import com.thecleancoders.crm.classes.Lead;
 import com.thecleancoders.crm.classes.Opportunity;
 import com.thecleancoders.crm.enums.Industry;
 import com.thecleancoders.crm.enums.Product;
-import com.thecleancoders.crm.main.Main;
-
-import java.sql.SQLOutput;
 
 public class Creator {
     private Input input;
@@ -99,7 +96,7 @@ public class Creator {
     }
 
 
-    public void createOpportunity() {
+    public void createOpportunityByLeadConversion() {
         System.out.println("\nAdditional information for the Opportunity. Please input the following:");
         System.out.println("Product type:");
         Product product = input.chooseProduct();
@@ -113,6 +110,21 @@ public class Creator {
         Opportunity opportunity = new Opportunity(product, quantity,
                 (Contact) Contact.allContacts.get(Contact.allContacts.size()-1));
         System.out.println("\n\nA new Opportunity was created as follows:");
+        System.out.println(opportunity.toString());
+    }
+
+    //When an OPPORTUNITY is created independently, it still depends on a CONTACT id
+    public void createOpportunity() {
+        System.out.println("\nCreating an independent OPPORTUNITY"+
+                "\n\nPlease insert the Id number of the CONTACT to be associated:");
+        int contactId = input.getIntegerHigherThanZero();
+        System.out.println("\nPlease choose the product");
+        Product product = input.chooseProduct();
+        System.out.println("\nQuantity of trucks (Integer higher than 0)");
+        int quantity = input.getIntegerHigherThanZero();
+        Opportunity opportunity = new Opportunity(product, quantity,
+                (Contact) Contact.getById(contactId, Contact.allContacts));
+        System.out.println("\nNew OPPORTUNITY created as follows:");
         System.out.println(opportunity.toString());
     }
 

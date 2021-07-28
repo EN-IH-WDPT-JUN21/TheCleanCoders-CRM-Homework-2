@@ -43,12 +43,12 @@ public class Lead extends Item {
 
     public static void lookUpLeadId(int leadId) {}
 
-    public void convertToOpportunity(Product product, int quantity, Industry industry, int empl, String city, String country) {
-        Contact contact = new Contact(this);
-        Opportunity opportunity = new Opportunity(product, quantity, contact);
-        Account account = new Account(this, contact, opportunity, industry, empl, city, country);
-        allLeads.remove(this);
-    }
+//    public void convertToOpportunity(Product product, int quantity, Industry industry, int empl, String city, String country) {
+//        Contact contact = new Contact(this);
+//        Opportunity opportunity = new Opportunity(product, quantity, contact);
+//        Account account = new Account(this, contact, opportunity, industry, empl, city, country);
+//        allLeads.remove(this);
+//    }
 
     // Getters and setters
 
@@ -115,31 +115,12 @@ public class Lead extends Item {
                     "· company name : " + companyName + '\n';
         }
 
-    }
-
-    public void setCompanyName(String companyName) {
-        this.companyName = companyName;
-    }
-
-    public static List<Item> getAllLeads() {
-        return allLeads;
-    }
-
     public static void removeItem(Lead lead) {
         for (int i = 0; i < allLeads.size(); i++) {
             if (lead.equals(allLeads.get(i))) {
                 allLeads.remove(i);
             }
         }
-    }
-
-    @Override
-    public String toString() {
-        return "=== Lead " + getId() + " ===" + '\n' +
-                "· name : " + name + '\n' +
-                "· phone number : " + phoneNumber + '\n' +
-                "· email : " + email + '\n' +
-                "· company name : " + companyName + '\n';
     }
 
 }
