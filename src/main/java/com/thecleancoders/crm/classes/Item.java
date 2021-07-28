@@ -15,15 +15,23 @@ public abstract class Item {
         addItem(this);
     }
 
+    public Item(int id, List<Item> listOfItems) {
+        setId(id);
+        setItemList(listOfItems);
+        addItem(this);
+    }
+
     // Methods
 
     public void addItem(Item item){
         itemList.add(item);
     }
 
-    public void removeItem(){
-        itemList.remove(this);
-    }
+//    public void removeItem(){
+//        itemList.remove(this);
+//    }
+
+
 
     public static void removeAllFromItemList() {
         itemList.removeAll(itemList);
@@ -35,8 +43,13 @@ public abstract class Item {
                 return item;
             }
         }
-        throw new NullPointerException("This id has no related item");
+
+        throw new NullPointerException("This id has no related item. Please try again.");
     }
+
+//    public static int getListIndexByItem(Item item) {
+//        for (int i = 0; i < )
+//    }
 
     // Setters
 
@@ -46,6 +59,10 @@ public abstract class Item {
         } else {
             this.id = itemList.get(itemList.size() - 1).getId() + 1;
         }
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public static void setItemList(List<Item> itemList) {

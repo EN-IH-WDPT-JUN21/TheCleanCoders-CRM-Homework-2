@@ -15,7 +15,7 @@ public class Opportunity extends Item{
     private int quantity;
     private Contact decisionMaker;
     private Status status;
-    protected static List<Item> allOpportunities = new ArrayList<>();
+    public static List<Item> allOpportunities = new ArrayList<>();
 
     //Constructor
 
@@ -25,6 +25,14 @@ public class Opportunity extends Item{
         setQuantity(quantity);
         setDecisionMaker(decisionMaker);
         setStatus(Status.OPEN);
+    }
+
+    public Opportunity(int id, Product product, int quantity, Contact decisionMaker, Status status) {
+        super(id, allOpportunities);
+        setProduct(product);
+        setQuantity(quantity);
+        setDecisionMaker(decisionMaker);
+        setStatus(status);
     }
 
     // Methods

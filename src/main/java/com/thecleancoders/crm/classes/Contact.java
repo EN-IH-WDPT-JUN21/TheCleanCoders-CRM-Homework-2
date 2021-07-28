@@ -13,7 +13,7 @@ public class Contact extends Item{
     private String phoneNumber;
     private String email;
     private String companyName;
-    protected static List<Item> allContacts = new ArrayList<>();
+    public static List<Item> allContacts = new ArrayList<>();
 
     // Constructor
 
@@ -25,7 +25,15 @@ public class Contact extends Item{
         setCompanyName(lead.getCompanyName());
     }
 
-    // Setters and getters
+    public Contact(int id, String name, String phoneNumber, String email, String companyName) {
+        super(id, allContacts);
+        this.name = name;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.companyName = companyName;
+    }
+
+// Setters and getters
 
     public String getName() {
         return this.name;
