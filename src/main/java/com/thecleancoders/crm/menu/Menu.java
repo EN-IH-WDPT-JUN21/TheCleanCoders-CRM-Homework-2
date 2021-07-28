@@ -33,7 +33,9 @@ public class Menu {
                 } catch (NullPointerException exception) {
                     printer.print(exception.getMessage());
                 } catch (NumberFormatException exception) {
-                    printer.print("Incorrect format of id. Please try again.");
+                    printer.print("Incorrect format of Id. Please try again.");
+                } catch (ArrayIndexOutOfBoundsException exception) {
+                    printer.print("Must input Id number. Please try again.");
                 }
             }
         } while (command != Command.EXIT);

@@ -34,7 +34,7 @@ public class Input {
             try {
                 intValue = Integer.parseInt(input);
             } catch (NumberFormatException exp) {
-                System.out.println("Must be Integer higher than 0");
+                System.out.println("Must be Integer higher than 0)");
             }
         } while (intValue <= 0);
 
