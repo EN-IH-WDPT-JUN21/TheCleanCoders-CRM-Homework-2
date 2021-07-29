@@ -1,5 +1,7 @@
 package com.thecleancoders.crm.menu;
 
+
+import com.thecleancoders.crm.classes.*;
 import java.sql.SQLOutput;
 
 public class Printer {
@@ -8,20 +10,27 @@ public class Printer {
     }
 
     public void printAllAccounts() {
-
-
+        for (Item account : Account.allAccounts) {
+            print(account.toString());
+        }
     }
 
     public void printAllContacts() {
-
+        for (Item contact : Contact.allContacts) {
+            print(contact.toString());
+        }
     }
 
     public void printAllLeads() {
-
+        for(Item lead : Lead.allLeads) {
+            print(lead.toString());
+        }
     }
 
     public void printAllOpportunities() {
-
+        for (Item opportunity : Opportunity.allOpportunities) {
+            print(opportunity.toString());
+        }
     }
 
     public void printTypoInfo(String wrongWord) {
@@ -34,8 +43,28 @@ public class Printer {
 
     public void printImportErrorInfo(String filename) {
         System.out.println("There was an error while importing data from file " + filename);
-    }
 
+      
+    public void welcomeMessage() {
+        print("\n\n============================================================");
+        print("                       Welcome to\n");
+        print("                     theCleanCoders\n");
+        print("            ########   ######     ##        ##");
+        print("            ########   ######     ###      ###");
+        print("            ##         ##    ##   ####    ####");
+        print("            ##         ##    ##   ## ##  ## ##");
+        print("            ##         ##    ##   ##   ##   ##");
+        print("            ##         ######     ##   ##   ##");
+        print("            ##         ######     ##        ##");
+        print("            ##         ##  ##     ##        ##");
+        print("            ##         ##   ##    ##        ##");
+        print("            ########   ##    ##   ##        ##");
+        print("            ########   ##     ##  ##        ##");
+        print("\n\nTo start using our cleanCRM, type the commands below. Type \"HELP\" for instructions");
+      
+    }
+      
+      
     public void helpPage(){
         System.out.println("=================================================");
         System.out.println("            The cleanCRM Help page");

@@ -33,10 +33,13 @@ public class Menu {
                 } catch (NullPointerException exception) {
                     printer.print(exception.getMessage());
                 } catch (NumberFormatException exception) {
-                    printer.print("Incorrect format of id. Please try again.");
+                    printer.print("Incorrect format of Id. Please try again.");
+                } catch (ArrayIndexOutOfBoundsException exception) {
+                    printer.print("Must input Id number. Please try again.");
                 }
             }
         } while (command != Command.EXIT);
+        System.out.println("Saving all Objects. Thank you for using the cleanCRM. Have a nice day.\n\n");
         input.close();
         fileManager.exportData();
     }
@@ -117,7 +120,7 @@ public class Menu {
     }
 
     public void show(ObjectType objectType) {
-        System.out.println("Shows all " + objectType.getPluralForm() + ".");
+        System.out.println("Shows all " + objectType.getPluralForm() + ".\n");
         switch (objectType) {
             case ACCOUNT:
                 printer.printAllAccounts();
