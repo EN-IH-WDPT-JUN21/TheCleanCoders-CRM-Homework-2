@@ -98,6 +98,10 @@ public class Menu {
             case HELP:
                 printer.helpPage();
                 break;
+            case SAVE:
+                printer.print("All objects saved to .txt files.");
+                fileManager.exportData();
+                break;
         }
     }
 

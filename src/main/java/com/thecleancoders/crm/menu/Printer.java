@@ -78,6 +78,7 @@ public class Printer {
         System.out.println(" CLOSE-WON <ACCOUNT Id Number>      Changes the selected ACCOUNT status to CLOSE-WON");
         System.out.println(" CLOSE-LOST <ACCOUNT Id Number>     Changes the selected ACCOUNT status to CLOSE-LOST");
         System.out.println(" OPEN <ACCOUNT Id Number>           Changes the selected ACCOUNT status to OPEN");
+        System.out.println(" SAVE                               Saves data to files");
         System.out.println(" HELP                               Displays this help info");
         System.out.println(" EXIT                               Terminates the cleanCRM program");
         System.out.println("\n      Object Types available:");
