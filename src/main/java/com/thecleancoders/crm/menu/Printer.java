@@ -43,23 +43,24 @@ public class Printer {
 
     public void printImportErrorInfo(String filename) {
         System.out.println("There was an error while importing data from file " + filename);
+    }   
 
       
     public void welcomeMessage() {
         print("\n\n============================================================");
         print("                       Welcome to\n");
         print("                     theCleanCoders\n");
-        print("            ########   ######     ##        ##");
-        print("            ########   ######     ###      ###");
-        print("            ##         ##    ##   ####    ####");
-        print("            ##         ##    ##   ## ##  ## ##");
-        print("            ##         ##    ##   ##   ##   ##");
-        print("            ##         ######     ##   ##   ##");
-        print("            ##         ######     ##        ##");
-        print("            ##         ##  ##     ##        ##");
-        print("            ##         ##   ##    ##        ##");
-        print("            ########   ##    ##   ##        ##");
-        print("            ########   ##     ##  ##        ##");
+        print("            ########   #######     ##        ##");
+        print("            ########   ########    ###      ###");
+        print("            ##         ##     ##   ####    ####");
+        print("            ##         ##     ##   ## ##  ## ##");
+        print("            ##         ##     ##   ##   ##   ##");
+        print("            ##         ########    ##   ##   ##");
+        print("            ##         #######     ##        ##");
+        print("            ##         ##   ##     ##        ##");
+        print("            ##         ##    ##    ##        ##");
+        print("            ########   ##     ##   ##        ##");
+        print("            ########   ##      ##  ##        ##");
         print("\n\nTo start using our cleanCRM, type the commands below. Type \"HELP\" for instructions");
       
     }
