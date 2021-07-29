@@ -80,7 +80,13 @@ public class Printer {
         System.out.println(" OPEN <ACCOUNT Id Number>           Changes the selected ACCOUNT status to OPEN");
         System.out.println(" HELP                               Displays this help info");
         System.out.println(" EXIT                               Terminates the cleanCRM program");
+        System.out.println("\n      Object Types available:");
+        System.out.println(" LEAD\n CONTACT" +
+                "\n OPPORTUNITY\n ACCOUNT\n");
+        System.out.println("All Object types accepted in plural (e.g OPPORTUNITY and OPPORTUNITIES are " +
+                "both accepted forms)");
         System.out.println("\nAll commands are case-insensitive\n\n");
-
     }
+    
+    
 }
