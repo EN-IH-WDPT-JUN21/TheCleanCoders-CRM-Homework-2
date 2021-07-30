@@ -5,10 +5,9 @@ import com.thecleancoders.crm.enums.Command;
 import com.thecleancoders.crm.enums.ObjectType;
 import com.thecleancoders.crm.enums.Status;
 import com.thecleancoders.crm.io.FileManager;
+import com.thecleancoders.crm.output.Style;
 
 import java.util.Objects;
-
-import java.util.Arrays;
 
 public class Menu {
     private final Printer printer = new Printer();
@@ -20,7 +19,7 @@ public class Menu {
         fileManager.importData();
     }
 
-    public void controlLoop() {
+    public void controlLoop() throws InterruptedException{
         Command command;
         do {
             String[] inputList = splitInput(input.getString());
@@ -39,7 +38,9 @@ public class Menu {
                 }
             }
         } while (command != Command.EXIT);
-        System.out.println("Saving all Objects. Thank you for using the cleanCRM. Have a nice day.\n\n");
+        System.out.println("\nSaving all Objects...");
+        Thread.sleep(500);
+        System.out.println(Style.OCHER + "Thank you for using the cleanCRM. Have a nice day.");
         input.close();
         fileManager.exportData();
     }
@@ -106,7 +107,6 @@ public class Menu {
     }
 
     public void create(ObjectType objectType) {
-        System.out.println("New " + objectType + " gets created");
         switch (objectType) {
             case ACCOUNT:
                 creator.createAccount();
@@ -156,13 +156,12 @@ public class Menu {
                 printer.print(Opportunity.getById(id, Opportunity.getAllOpportunities()).toString());
                 break;
         }
-        System.out.println("Lookups " + objectType + " with and id of " + id + ".");
     }
 
     public void convert(int id) {
-        //When a Lead is converted, Contact, Opportunity and Account are automatically created, and the Lead must be
-        //deleted
-        System.out.println("\nConverting LEAD nr " + id + " to CONTACT, OPPORTUNITY and ACCOUNT\n");
+        // When a Lead is converted, Contact, Opportunity and Account are automatically created
+        // and the Lead must be deleted.
+        System.out.println("\nConverting LEAD nº " + id + " to CONTACT, OPPORTUNITY and ACCOUNT\n");
         Lead lead = (Lead) Lead.getById(id, Lead.getAllLeads());
         creator.createContact(lead);
         creator.createOpportunityByLeadConversion();
@@ -171,7 +170,7 @@ public class Menu {
     }
 
     public void changeStatus(Status status, int id) {
-        System.out.println("Changes OPPORTUNITY with and id of " + id + " status to " + status + ".");
+        System.out.println("Changes OPPORTUNITY with an id of " + id + " status to " + status + ".");
         Opportunity opportunity = (Opportunity) Opportunity.getById(id, Opportunity.getAllOpportunities());
         opportunity.setStatus(status);
 
