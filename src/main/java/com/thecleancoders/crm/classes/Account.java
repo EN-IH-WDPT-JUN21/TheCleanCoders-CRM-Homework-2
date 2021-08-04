@@ -113,7 +113,7 @@ public class Account extends Item{
 
     @Override
     public String toString() {
-        return "=== Account" + getId() + " ===" + '\n' +
+        return "=== Account " + getId() + " ===" + '\n' +
                 "· industry : " + industry + '\n' +
                 "· employeeCount : " + employeeCount + '\n' +
                 "· city : " + city + '\n' +

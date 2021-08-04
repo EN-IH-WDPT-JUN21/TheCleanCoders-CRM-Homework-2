@@ -1,5 +1,7 @@
 package com.thecleancoders.crm.classes;
 
+import com.thecleancoders.crm.output.Style;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -75,15 +77,15 @@ public class Contact extends Item{
                 "· name : " + name + '\n' +
                 "· phone number : " + phoneNumber + '\n' +
                 "· email : " + email + '\n' +
-                "· company name :" + companyName + '\n';
+                "· company name : " + companyName + '\n';
     }
 
     public String toStringInOppClass() {
-        return "contact " + getId() + '\n' +
-                "· name : " + name + '\n' +
-                "· phone number : " + phoneNumber + '\n' +
-                "· email : " + email + '\n' +
-                "· company name :" + companyName;
+        return Style.DARK_GRAY + "CONTACT " + getId() + '\n' + Style.DEFAULT +
+                "   - name : " + name + '\n' +
+                "   - phone number : " + phoneNumber + '\n' +
+                "   - email : " + email + '\n' +
+                "   - company name : " + companyName;
     }
 }
 

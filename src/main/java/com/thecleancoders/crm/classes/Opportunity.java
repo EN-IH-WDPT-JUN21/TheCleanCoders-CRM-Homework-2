@@ -97,7 +97,7 @@ public class Opportunity extends Item{
         return "=== Opportunity " + getId() + " ===" + '\n' +
                 "· product : " + product + '\n' +
                 "· quantity : " + quantity + '\n' +
-                "· decision maker : " + decisionMaker.toStringInOppClass() + '\n' +
+                "· decision maker -> " + decisionMaker.toStringInOppClass() + '\n' +
                 "· status : " + status + '\n';
     }
 }
