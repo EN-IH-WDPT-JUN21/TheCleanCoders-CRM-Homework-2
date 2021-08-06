@@ -1,6 +1,6 @@
 # THE CLEAN CODERS CRM
 
-Welcome to the <b> cleanCRM </b>, the best tool to track current and potential customers in your sales processes. 
+Welcome to the <b> cleanCRM </b>, the best tool to track current and potential customers in your sales processes.
 
 This CRM will help you:
 
@@ -44,7 +44,7 @@ java src/Main/Main.java
 2. Extract the ZIP file and open the directory as a project on an IDE such as IntelliJ
 
 3. Run the Main.Main.java file
-During its use type "HELP" for commands information. 
+   During its use type "HELP" for commands information.
 
 ## How the CRM simulator works
 
@@ -71,7 +71,7 @@ The <b>cleanCRM</b> is very intuitive to use, however, if you are using it for t
 - Account
 
 ** All Object types accepted in plural (e.g OPPORTUNITY and OPPORTUNITIES are both accepted forms)
-<br> ** All commands are case-insensitive        
+<br> ** All commands are case-insensitive
 
 ## Diagrams
 

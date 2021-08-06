@@ -43,7 +43,6 @@ public class Input {
         return intValue;
     }
 
-
     public void close() {
         scanner.close();
     }

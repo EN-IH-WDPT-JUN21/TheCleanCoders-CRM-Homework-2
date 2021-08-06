@@ -27,12 +27,6 @@ public abstract class Item {
         itemList.add(item);
     }
 
-//    public void removeItem(){
-//        itemList.remove(this);
-//    }
-
-
-
     public static void removeAllFromItemList() {
         itemList.removeAll(itemList);
     }
@@ -47,9 +41,17 @@ public abstract class Item {
         throw new NullPointerException("This id has no related item. Please try again.");
     }
 
-//    public static int getListIndexByItem(Item item) {
-//        for (int i = 0; i < )
-//    }
+    public static boolean isNumeric(String str) {
+        if (str == null) {
+            return false;
+        }
+        try {
+            Long.parseLong(str.replaceAll(" ", ""));
+        } catch (NumberFormatException nfe) {
+            return false;
+        }
+        return true;
+    }
 
     // Setters
 
@@ -79,15 +81,4 @@ public abstract class Item {
         return itemList;
     }
 
-    public static boolean isNumeric(String str) {
-        if (str == null) {
-            return false;
-        }
-        try {
-            long number = Long.parseLong(str.replaceAll(" ", ""));
-        } catch (NumberFormatException nfe) {
-            return false;
-        }
-        return true;
-    }
 }
