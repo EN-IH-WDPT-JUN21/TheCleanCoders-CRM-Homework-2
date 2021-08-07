@@ -1,7 +1,9 @@
 # THE CLEAN CODERS CRM
 
-Welcome to the <b> cleanCRM </b>, the best tool to track current and potential customers in your sales processes.
+<br>
+<b> Welcome to the cleanCRM </b>, the best tool to track current and potential customers in your sales processes !
 
+<br><br>
 This CRM will help you:
 
 · Bring together important information about potential new customers.
@@ -14,9 +16,10 @@ This CRM will help you:
 
 · Associate an opportunity with an account.
 
+<br><br>
 ## Getting started
 
-### Clone, compile and run the game in your terminal
+### Clone, compile and run the cleanCRM in your terminal
 
 1. Clone the repository
 ```
@@ -35,7 +38,7 @@ javac
 java src/Main/Main.java
 ```
 
-### Run the game through an IDE
+### Run the cleanCRM through an IDE
 
 1. Download ZIP file of the project
 
@@ -46,7 +49,8 @@ java src/Main/Main.java
 3. Run the Main.Main.java file
    During its use type "HELP" for commands information.
 
-## How the CRM simulator works
+<br><br>
+## How the CRM works
 
 The <b>cleanCRM</b> is very intuitive to use, however, if you are using it for the first time, it is normal to face some doubts about the command line. If so, please type "HELP" for further information.
 
@@ -73,14 +77,25 @@ The <b>cleanCRM</b> is very intuitive to use, however, if you are using it for t
 ** All Object types accepted in plural (e.g OPPORTUNITY and OPPORTUNITIES are both accepted forms)
 <br> ** All commands are case-insensitive
 
+<br><br>
 ## Diagrams
 
 <b>· Use case diagram : </b>
+![CRM%20SYSTEM.png](https://github.com/EN-IH-WDPT-JUN21/TheCleanCoders-CRM-Homework-2/blob/main/img/CRM%20SYSTEM.png)
 
 <b>· Class diagram : </b>
+![Customer%20Relationship%20Manager.png](https://github.com/EN-IH-WDPT-JUN21/TheCleanCoders-CRM-Homework-2/blob/main/img/Customer%20Relationship%20Manager.png)
 
+<br><br>
 ## Screenshots
+![screenshot1.png](https://github.com/EN-IH-WDPT-JUN21/TheCleanCoders-CRM-Homework-2/blob/main/img/Screenshot1.png)
+![screenshot3.png](https://github.com/EN-IH-WDPT-JUN21/TheCleanCoders-CRM-Homework-2/blob/main/img/Screenshot3.png)
+![screenshot4.png](https://github.com/EN-IH-WDPT-JUN21/TheCleanCoders-CRM-Homework-2/blob/main/img/Screenshot4.png)
+![screenshot6.png](https://github.com/EN-IH-WDPT-JUN21/TheCleanCoders-CRM-Homework-2/blob/main/img/Screenshot6.png)
+![screenshot7.png](https://github.com/EN-IH-WDPT-JUN21/TheCleanCoders-CRM-Homework-2/blob/main/img/Screenshot7.png)
+![screenshot8.png](https://github.com/EN-IH-WDPT-JUN21/TheCleanCoders-CRM-Homework-2/blob/main/img/Screenshot8.png)
 
+<br><br>
 ## Authors
 
 **TheCleanCoders**: Vitaliano Costa, Maravillas Fernández, Joao Lopes, Natalia Norberciak, Katarzyna Wąsik.
