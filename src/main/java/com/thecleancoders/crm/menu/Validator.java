@@ -2,17 +2,14 @@ package com.thecleancoders.crm.menu;
 
 import org.apache.commons.validator.routines.EmailValidator;
 
-
 public class Validator {
 
     public static boolean isPhoneNumberValid(String phoneNumber){
-        boolean result = false;
-        if (phoneNumber.matches("\\d{9}") || phoneNumber.matches("\\d{3}[-\\.\\s]\\d{3}[-\\.\\s]\\d{3}")) {
-            result = true;
+        if (phoneNumber.length() > 1 && phoneNumber.length() < 16 && phoneNumber.matches("[0-9()+-]+")) {
+            return true;
         } else {
-            throw new IllegalArgumentException("The phone number must have 9 digits");
+            throw new IllegalArgumentException("The phone number must have a maximum of 16 digits including prefix.");
         }
-        return result;
     }
 
     public static boolean isEmailValid(String email){
@@ -25,14 +22,12 @@ public class Validator {
         return result;
     }
 
-    public static boolean isStringValid(String string){
-        boolean result = false;
-        if(string.length() > 1 && string.length() < 35 && string.matches("[a-zA-Z0-9]+")){
-            result = true;
+    public static boolean isStringValid(String string) {
+        if(string.length() > 1 && string.length() < 35 && string.replaceAll("\\s+","").matches("[áéíóúàèìòùäëïöüãẽõçłña-zÁÉÍÓÚÀÈÌÒÙÄËÏÖÜÃẼÕÇŁÑA-Z0-9]+")){
+            return true;
         } else {
             throw new IllegalArgumentException("Not a valid input.");
         }
-        return result;
     }
 
 }

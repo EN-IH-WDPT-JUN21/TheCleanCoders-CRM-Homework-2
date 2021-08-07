@@ -1,8 +1,5 @@
 package com.thecleancoders.crm.classes;
 
-import com.thecleancoders.crm.enums.Industry;
-import com.thecleancoders.crm.enums.Product;
-
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
@@ -37,18 +34,15 @@ public class Lead extends Item {
         setCompanyName(companyName);
     }
 
-    // Methods
+    //Methods
 
-    public static void showLeads() {}
-
-    public static void lookUpLeadId(int leadId) {}
-
-//    public void convertToOpportunity(Product product, int quantity, Industry industry, int empl, String city, String country) {
-//        Contact contact = new Contact(this);
-//        Opportunity opportunity = new Opportunity(product, quantity, contact);
-//        Account account = new Account(this, contact, opportunity, industry, empl, city, country);
-//        allLeads.remove(this);
-//    }
+    public static void removeItem(Lead lead) {
+        for (int i = 0; i < allLeads.size(); i++) {
+            if (lead.equals(allLeads.get(i))) {
+                allLeads.remove(i);
+            }
+        }
+    }
 
     // Getters and setters
 
@@ -64,16 +58,8 @@ public class Lead extends Item {
         return this.phoneNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) throws NumberFormatException {
-        try {
-            if (Item.isNumeric(phoneNumber)) {
-                this.phoneNumber = phoneNumber;
-            } else {
-                throw new NumberFormatException();
-            }
-        } catch (NumberFormatException ex) {
-            System.out.println("Wrong phone number. Please enter a digit number (eg. 123456789)");
-        }
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public String getEmail() {
@@ -87,40 +73,33 @@ public class Lead extends Item {
             boolean matchFound = m.matches();
             if (matchFound) {
                 this.email = email;
-            } else {throw new InputMismatchException();
+            } else {
+                throw new InputMismatchException();
             }
         } catch(InputMismatchException ex){
-                System.out.println("Wrong email address");
-            }
+            System.out.println("Wrong email address");
         }
+    }
 
-        public String getCompanyName () {
-            return this.companyName;
-        }
+    public String getCompanyName () {
+        return this.companyName;
+    }
 
-        public void setCompanyName (String companyName){
-            this.companyName = companyName;
-        }
+    public void setCompanyName (String companyName){
+        this.companyName = companyName;
+    }
 
-        public static List<Item> getAllLeads () {
-            return allLeads;
-        }
+    public static List<Item> getAllLeads () {
+        return allLeads;
+    }
 
-        @Override
-        public String toString () {
-            return "=== Lead " + getId() + " ===" + '\n' +
-                    "· name : " + name + '\n' +
-                    "· phone number : " + phoneNumber + '\n' +
-                    "· email : " + email + '\n' +
-                    "· company name : " + companyName + '\n';
-        }
-
-    public static void removeItem(Lead lead) {
-        for (int i = 0; i < allLeads.size(); i++) {
-            if (lead.equals(allLeads.get(i))) {
-                allLeads.remove(i);
-            }
-        }
+    @Override
+    public String toString () {
+        return "=== Lead " + getId() + " ===" + '\n' +
+                "· name : " + name + '\n' +
+                "· phone number : " + phoneNumber + '\n' +
+                "· email : " + email + '\n' +
+                "· company name : " + companyName + '\n';
     }
 
 }
