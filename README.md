@@ -30,7 +30,8 @@ This CRM will help you:
 2. Extract the ZIP file and open the directory as a project on an IDE such as IntelliJ
 
 3. Run the Main.Main.java file
-   During its use type "HELP" for commands information.
+
+4. Enjoy
 
 <br><br>
 ## · How the CRM works
