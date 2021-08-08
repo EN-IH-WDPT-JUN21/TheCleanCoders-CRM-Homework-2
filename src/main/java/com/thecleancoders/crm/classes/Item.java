@@ -45,11 +45,13 @@ public abstract class Item {
         if (str == null) {
             return false;
         }
+        
         try {
             Long.parseLong(str.replaceAll(" ", ""));
         } catch (NumberFormatException nfe) {
             return false;
         }
+      
         return true;
     }
 
