@@ -42,7 +42,6 @@ class ValidatorTest {
         assertThrows(IllegalArgumentException.class, () -> Validator.isStringValid("hdhdhdh@uhgab"));
         assertThrows(IllegalArgumentException.class, () -> Validator.isStringValid(""));
         assertThrows(IllegalArgumentException.class, () -> Validator.isStringValid("a"));
-        assertThrows(IllegalArgumentException.class, () -> Validator.isStringValid("1"));
         assertThrows(IllegalArgumentException.class, () -> Validator.isStringValid("."));
         assertThrows(IllegalArgumentException.class, () -> Validator.isStringValid("!@#$%^&*()"));
         assertThrows(IllegalArgumentException.class, () -> Validator.isStringValid(" "));
