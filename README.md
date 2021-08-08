@@ -16,33 +16,16 @@ This CRM will help you:
 
 · Associate an opportunity with an account.
 
+· Save all your information in a secure CSV file to be able to reuse it later.
+
 <br><br>
-## Getting started
-
-### Clone, compile and run the cleanCRM in your terminal
-
-1. Clone the repository
-```
-git clone https://github.com/EN-IH-WDPT-JUN21/TheCleanCoders-CRM-Homework-2.git
-```
-2. Go to the src directory
-```
-cd your_path_to_project/TheCleanCoders-CRM-Homework-2
-```
-3. Compile the source files
-```
-javac 
-```
-4. Run the program
-```
-java src/Main/Main.java
-```
+## · Getting started
 
 ### Run the cleanCRM through an IDE
-
+<br>
 1. Download ZIP file of the project
 
-![zipdownload.png](https://github.com/EN-IH-WDPT-JUN21/TheCleanCoders-MugglesAgainstMagic-Homework-1/blob/main/img/zipdownload.png)
+<br>![zipdownload.png](https://github.com/EN-IH-WDPT-JUN21/TheCleanCoders-MugglesAgainstMagic-Homework-1/blob/main/img/zipdownload.png)
 
 2. Extract the ZIP file and open the directory as a project on an IDE such as IntelliJ
 
@@ -50,9 +33,9 @@ java src/Main/Main.java
    During its use type "HELP" for commands information.
 
 <br><br>
-## How the CRM works
+## · How the CRM works
 
-The <b>cleanCRM</b> is very intuitive to use, however, if you are using it for the first time, it is normal to face some doubts about the command line. If so, please type "HELP" for further information.
+The <b>cleanCRM</b> is a very intuitive application, however, if you are using it for the first time, you might face doubts about what the commands are. If so, please type "HELP" for further information.
 
 ### Commands available :
 
@@ -78,7 +61,7 @@ The <b>cleanCRM</b> is very intuitive to use, however, if you are using it for t
 <br> ** All commands are case-insensitive
 
 <br><br>
-## Diagrams
+## · Diagrams
 
 <b>· Use case diagram : </b>
 ![CRM%20SYSTEM.png](https://github.com/EN-IH-WDPT-JUN21/TheCleanCoders-CRM-Homework-2/blob/main/img/CRM%20SYSTEM.png)
@@ -87,7 +70,7 @@ The <b>cleanCRM</b> is very intuitive to use, however, if you are using it for t
 ![Customer%20Relationship%20Manager.png](https://github.com/EN-IH-WDPT-JUN21/TheCleanCoders-CRM-Homework-2/blob/main/img/Customer%20Relationship%20Manager.png)
 
 <br><br>
-## Screenshots
+## · Screenshots
 ![screenshot1.png](https://github.com/EN-IH-WDPT-JUN21/TheCleanCoders-CRM-Homework-2/blob/main/img/Screenshot1.png)
 ![screenshot3.png](https://github.com/EN-IH-WDPT-JUN21/TheCleanCoders-CRM-Homework-2/blob/main/img/Screenshot3.png)
 ![screenshot4.png](https://github.com/EN-IH-WDPT-JUN21/TheCleanCoders-CRM-Homework-2/blob/main/img/Screenshot4.png)
