@@ -40,16 +40,16 @@ The <b>cleanCRM</b> is a very intuitive application, however, if you are using i
 
 ### Commands available :
 
-- NEW < Object type > . . . . . . . . . . . . . . . . . . . . . . . _creates a new Object_
-- SHOW < Object type > . . . . . . . . . . . . . . . . . . . . . ._lists all Objects of the selected type_
-- LOOKUP < Object type > < Id number > . . . . . . _display the selected Object type related to the Id number_
-- CONVERT < Lead Id > . . . . . . . . . . . . . . . . . . . . . . ._converts the selected LEAD in CONTACT, OPPORTUNITY and ACCOUNT_
-- CLOSE-WON < Account Id > . . . . . . . . . . . . . . . . ._changes the selected ACCOUNT status to WON_
-- CLOSE-LOST < Account Id > . . . . . . . . . . . . . . . . ._changes the selected ACCOUNT status to LOST_
-- OPEN < Account Id > . . . . . . . . . . . . . . . . . . . . . . ._changes the selected ACCOUNT status to OPEN_
-- SAVE . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ._save data to external csv files_
-- HELP . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ._displays the help info_
-- EXIT . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . _terminate the cleanCRM program_
+- NEW < Object type > . . . . . . . . . . . . . . . . . . . . . _creates a new Object_
+- SHOW < Object type > . . . . . . . . . . . . . . . . . . . ._lists all Objects of the selected type_
+- LOOKUP < Object type > < Id number > . . . . _display the selected Object type related to the Id number_
+- CONVERT < Lead Id > . . . . . . . . . . . . . . . . . . . . ._converts the selected LEAD in CONTACT, OPPORTUNITY and ACCOUNT_
+- CLOSE-WON < Account Id > . . . . . . . . . . . . . . ._changes the selected ACCOUNT status to WON_
+- CLOSE-LOST < Account Id > . . . . . . . . . . . . . . ._changes the selected ACCOUNT status to LOST_
+- OPEN < Account Id > . . . . . . . . . . . . . . . . . . . . ._changes the selected ACCOUNT status to OPEN_
+- SAVE . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ._save data to external csv files_
+- HELP . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ._displays the help info_
+- EXIT . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . _terminate the cleanCRM program_
 
 ### Object types :
 
