@@ -58,7 +58,7 @@ The <b>cleanCRM</b> is a very intuitive application, however, if you are using i
 - Opportunity
 - Account
 
-** SHOW command will be followed by the Object type in plural (e.g. <<show opportunities>> )
+** SHOW command will be followed by the Object type in plural (e.g. ``show opportunities`` )
 <br> ** All commands are case-insensitive
 
 <br><br>
